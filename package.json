@@ -10,13 +10,8 @@
     "lint": "eslint --ext .ts,.tsx src --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run test:coverage && npm run lint",
-      "pre-push": "npm run test:coverage && npm run lint"
-    }
+    "test:coverage": "jest --coverage",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
