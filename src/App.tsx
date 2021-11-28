@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import './styles.scss';
+import React from 'react';
 
 const App = () => {
   return (

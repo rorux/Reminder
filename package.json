@@ -11,7 +11,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "prepare": "husky install"
+    "create-component": "node utils/componentCreator --name"
   },
   "repository": {
     "type": "git",
