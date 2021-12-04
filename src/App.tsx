@@ -1,10 +1,14 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './router/Router';
 
-const App = () => {
+const user = false;
+
+const App: React.FC = () => {
   return (
-    <div className="wrapper">
-      <h1>App</h1>
-    </div>
+    <BrowserRouter>
+      <Router authed={user} />
+    </BrowserRouter>
   );
 };
 

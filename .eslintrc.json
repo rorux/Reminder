@@ -2,7 +2,8 @@
   "settings": {
     "react": {
       "version": "latest"
-    }
+    },
+    "import/resolver": "webpack"
   },
   "env": {
     "browser": true,
@@ -34,6 +35,10 @@
         "endOfLine": "auto"
       }
     ],
-    "@typescript-eslint/no-var-requires": 0
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    // "@typescript-eslint/ban-types": 0,
+    "@typescript-eslint/ban-ts-comment": 0,
+    "import/no-unresolved": 0
   }
 }

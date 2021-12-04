@@ -15,7 +15,7 @@ function setupDevtool() {
 module.exports = {
   mode: NODE_ENV ? NODE_ENV : "development",
   entry: {
-    main: path.resolve(__dirname, "src", "index.jsx"),
+    main: path.resolve(__dirname, "src", "index.tsx"),
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -46,19 +46,24 @@ module.exports = {
       {
         test: /\.[jt]sx?$/i,
         use: ["ts-loader"],
+        exclude: /node_modules/,
       },
     ],
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     alias: {
-      "@component": path.resolve(__dirname, "src", "component"),
+      "@utils": path.resolve(__dirname, "utils"),
+      "@components": path.resolve(__dirname, "src", "components"),
+      "@screens": path.resolve(__dirname, "src", "screens"),
+      "@router": path.resolve(__dirname, "src", "router"),
     },
   },
   devServer: {
     port: 3000,
     hot: IS_DEV,
     open: false,
+    historyApiFallback: true,
   },
   devtool: setupDevtool(),
 };
