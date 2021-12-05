@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
+const Dotenv = require('dotenv-webpack');
 
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV === "development";
@@ -32,6 +33,7 @@ module.exports = {
       template: path.resolve(__dirname, "public", "index.html"),
     }),
     new CleanWebpackPlugin(),
+    new Dotenv(),
   ],
   module: {
     rules: [
@@ -57,6 +59,8 @@ module.exports = {
       "@components": path.resolve(__dirname, "src", "components"),
       "@screens": path.resolve(__dirname, "src", "screens"),
       "@router": path.resolve(__dirname, "src", "router"),
+      "@store": path.resolve(__dirname, "src", "store"),
+      "@services": path.resolve(__dirname, "src", "services"),
     },
   },
   devServer: {
