@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,6 +14,9 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { ROUTES } from '@router/constants';
 import TextFieldWrapper from '@components/formsUI/TextField';
+import AuthSnackbar from '@components/AuthSnackbar';
+import { authSelector } from '@store/auth/selectors';
+import { authRegisterAction } from '@store/auth/actions';
 
 const theme = createTheme();
 
@@ -30,7 +34,7 @@ const FORM_VALIDATION = Yup.object().shape({
   email: Yup.string().email('Некорректный email!').required('Введите, пожалуйста, email!'),
   password: Yup.string()
     .required('Введите, пожалуйста, пароль!')
-    .min(3, 'Пароль от 3-х символов!')
+    .min(6, 'Пароль от 6 символов!')
     .max(20, 'Пароль не более 20 символов!'),
 });
 
@@ -41,11 +45,19 @@ type TValues = {
 };
 
 export default function Register() {
-  const handleSubmit = (values: TValues): void => {
-    console.log(values);
-  };
+  const { error } = useSelector(authSelector);
+  const dispatch = useDispatch();
+
+  const handleSubmit = useCallback(
+    (values: TValues): void => {
+      dispatch(authRegisterAction(values));
+    },
+    [dispatch]
+  );
+
   return (
     <ThemeProvider theme={theme}>
+      {error && <AuthSnackbar message={error} />}
       <Container component="main" maxWidth="xs" data-test="registerComponent">
         <CssBaseline />
         <Box

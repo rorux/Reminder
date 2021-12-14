@@ -11,6 +11,14 @@ import { ROUTES } from '../constants';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+jest.mock('react-redux', () => ({
+  ...jest.requireActual('react-redux'),
+  useSelector: jest.fn(() => ({
+    error: null,
+  })),
+  useDispatch: jest.fn(),
+}));
+
 const setUp = (route: string, authed: boolean) =>
   mount(
     <MemoryRouter initialEntries={[route]}>
