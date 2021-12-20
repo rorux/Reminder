@@ -6,11 +6,11 @@ import CloseIcon from '@mui/icons-material/Close';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import { authClearErrorAction } from '@store/auth/actions';
 
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
+export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-interface IAuthSnackbarProps {
+export interface IAuthSnackbarProps {
   message: string;
 }
 
@@ -41,7 +41,12 @@ const AuthSnackbar: React.FC<IAuthSnackbarProps> = ({ message }) => {
       onClose={handleClose}
       action={action}
     >
-      <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+      <Alert
+        data-test="snackbar-alert"
+        onClose={handleClose}
+        severity="error"
+        sx={{ width: '100%' }}
+      >
         {message}
       </Alert>
     </Snackbar>

@@ -82,6 +82,7 @@ export default function Register() {
               }}
               validationSchema={FORM_VALIDATION}
               onSubmit={handleSubmit}
+              className="form-register"
             >
               <Form>
                 <Grid container spacing={2}>
@@ -95,7 +96,13 @@ export default function Register() {
                     <TextFieldWrapper fullWidth name="password" label="Введите пароль" />
                   </Grid>
                 </Grid>
-                <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                <Button
+                  className="submit-register"
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
                   Зарегистрироваться
                 </Button>
               </Form>

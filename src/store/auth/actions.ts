@@ -24,7 +24,6 @@ export const authRegisterAction =
         type: AuthActionTypes.REGISTER_SUCCESS,
         payload: currentUser,
       });
-      console.log('Регистрация окончена');
     } catch (error: any) {
       dispatch({
         type: AuthActionTypes.REGISTER_FAILURE,
