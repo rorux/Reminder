@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { ROUTES } from './constants';
-import { IRouteProps } from './types';
+import { IRouteProps, ROUTES } from './types';
 
 const PrivateRoute = (props: IRouteProps) => {
   const { authed, component: Component, children, ...rest } = props;

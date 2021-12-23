@@ -1,1 +1,3 @@
-export const authSelector = (store: any) => store.auth;
+import { IRootState } from '@store/types';
+
+export const authSelector = (store: IRootState) => store.auth;

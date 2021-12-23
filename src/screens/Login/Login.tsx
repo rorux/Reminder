@@ -12,7 +12,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { ROUTES } from '@router/constants';
+import { ROUTES } from '@router/types';
 import TextFieldWrapper from '@components/formsUI/TextField';
 import AuthSnackbar from '@components/AuthSnackbar';
 import { authSelector } from '@store/auth/selectors';

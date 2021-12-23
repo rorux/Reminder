@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer component Should render Drawer component 1`] = `
+<Styled(ForwardRef(Drawer))
+  open={false}
+  variant="permanent"
+>
+  <ForwardRef(Toolbar)
+    sx={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "flex-end",
+        "px": Array [
+          1,
+        ],
+      }
+    }
+  >
+    <ForwardRef(IconButton)
+      onClick={[Function]}
+    >
+      <Memo(ForwardRef(ChevronLeftIcon)) />
+    </ForwardRef(IconButton)>
+  </ForwardRef(Toolbar)>
+  <ForwardRef(Divider) />
+  <ForwardRef(List)>
+    <Menu />
+  </ForwardRef(List)>
+</Styled(ForwardRef(Drawer))>
+`;

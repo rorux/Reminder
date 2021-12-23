@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBar component Should render AppBar component 1`] = `
+<Styled(ForwardRef(AppBar))
+  open={false}
+  position="absolute"
+>
+  <ForwardRef(Toolbar)
+    sx={
+      Object {
+        "pr": "24px",
+      }
+    }
+  >
+    <ForwardRef(IconButton)
+      aria-label="open drawer"
+      color="inherit"
+      edge="start"
+      onClick={[Function]}
+      sx={
+        Object {
+          "marginRight": "36px",
+        }
+      }
+    >
+      <Memo(ForwardRef(MenuIcon)) />
+    </ForwardRef(IconButton)>
+    <ForwardRef(Typography)
+      color="inherit"
+      component="h1"
+      noWrap={true}
+      sx={
+        Object {
+          "flexGrow": 1,
+        }
+      }
+      variant="h6"
+    >
+      Календарь
+    </ForwardRef(Typography)>
+  </ForwardRef(Toolbar)>
+</Styled(ForwardRef(AppBar))>
+`;
