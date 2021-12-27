@@ -5,16 +5,15 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import { CircularProgress } from '@mui/material';
 import AppBar from '@components/app/AppBar';
 import Drawer from '@components/app/Drawer';
-import { TCalendar, TDashboard } from '@router/Router';
+import { TReactLazy } from '@router/Router';
 
 const mdTheme = createTheme();
 
 type TPageLayoutProps = {
-  component: TCalendar | TDashboard;
+  component: TReactLazy;
 };
 
 const PageLayout: React.FC<TPageLayoutProps> = ({ component }) => {
@@ -37,14 +36,12 @@ const PageLayout: React.FC<TPageLayoutProps> = ({ component }) => {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
+          <Container maxWidth="lg" sx={{ mt: 3, mb: 3 }}>
+            <Grid container spacing={2}>
               <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Suspense fallback={<CircularProgress />}>
-                    <Component />
-                  </Suspense>
-                </Paper>
+                <Suspense fallback={<CircularProgress />}>
+                  <Component />
+                </Suspense>
               </Grid>
             </Grid>
           </Container>

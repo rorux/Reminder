@@ -8,6 +8,13 @@ import { AppActionTypes } from '@store/app/types';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useLocation: jest.fn(() => ({
+    pathname: null,
+  })),
+}));
+
 describe('AppBar component', () => {
   let component: Enzyme.ShallowWrapper;
   let spyOnUseSelector;

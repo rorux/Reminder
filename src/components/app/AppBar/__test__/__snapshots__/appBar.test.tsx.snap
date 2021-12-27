@@ -35,9 +35,7 @@ exports[`AppBar component Should render AppBar component 1`] = `
         }
       }
       variant="h6"
-    >
-      Календарь
-    </ForwardRef(Typography)>
+    />
   </ForwardRef(Toolbar)>
 </Styled(ForwardRef(AppBar))>
 `;

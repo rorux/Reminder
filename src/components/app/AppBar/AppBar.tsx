@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
@@ -8,6 +9,8 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import { appSelector } from '@store/app/selectors';
 import { drawerToggleAction } from '@store/app/actions';
+import { ROUTES, ROUTES_NAME } from '@router/types';
+import { getEnumKeyByEnumValue, getEnumValueByEnumKey } from '@utils/funcs';
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
@@ -35,6 +38,9 @@ export default function AppBar() {
   const { isDrawerOpen } = useSelector(appSelector);
   const dispatch = useDispatch();
 
+  const routeKey = getEnumKeyByEnumValue(ROUTES, useLocation().pathname);
+  const title = getEnumValueByEnumKey(ROUTES_NAME, routeKey);
+
   const toggleDrawer = useCallback(() => {
     dispatch(drawerToggleAction());
   }, [dispatch]);
@@ -59,7 +65,7 @@ export default function AppBar() {
           <MenuIcon />
         </IconButton>
         <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-          Календарь
+          {title}
         </Typography>
       </Toolbar>
     </AppBarStyled>

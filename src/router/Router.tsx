@@ -13,9 +13,11 @@ const NotFound = React.lazy(() => import('@screens/NotFound'));
 
 export const Calendar = React.lazy(() => import('@components/Calendar'));
 export const Dashboard = React.lazy(() => import('@components/Dashboard'));
+export const Profile = React.lazy(() => import('@components/Profile'));
+export const RecordCreate = React.lazy(() => import('@components/RecordCreate'));
+export const RecordEdit = React.lazy(() => import('@components/RecordEdit'));
 
-export type TCalendar = typeof Calendar;
-export type TDashboard = typeof Dashboard;
+export type TReactLazy = typeof Calendar;
 
 const Router: React.FC<IRouteProps> = ({ authed }) => {
   return (
@@ -29,6 +31,21 @@ const Router: React.FC<IRouteProps> = ({ authed }) => {
       <PrivateRoute exact authed={authed} path={ROUTES.DASHBOARD}>
         <Suspense fallback={<CircularProgress />}>
           <PageLayout component={Dashboard} />
+        </Suspense>
+      </PrivateRoute>
+      <PrivateRoute exact authed={authed} path={ROUTES.PROFILE}>
+        <Suspense fallback={<CircularProgress />}>
+          <PageLayout component={Profile} />
+        </Suspense>
+      </PrivateRoute>
+      <PrivateRoute exact authed={authed} path={ROUTES.CREATE_RECORD}>
+        <Suspense fallback={<CircularProgress />}>
+          <PageLayout component={RecordCreate} />
+        </Suspense>
+      </PrivateRoute>
+      <PrivateRoute exact authed={authed} path={ROUTES.EDIT_RECORD}>
+        <Suspense fallback={<CircularProgress />}>
+          <PageLayout component={RecordEdit} />
         </Suspense>
       </PrivateRoute>
       <PublicRoute exact authed={authed} path={ROUTES.LOGIN}>
