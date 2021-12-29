@@ -1,9 +1,16 @@
 import firebase from 'firebase';
-import { authRegisterAction, authLoginAction, authLogoutAction } from '../actions';
+import {
+  authRegisterAction,
+  authLoginAction,
+  authLogoutAction,
+  authClearErrorAction,
+} from '../actions';
 import { AuthActionTypes } from '../types';
 import authReducer from '../reducer';
+import { authSelector } from '../selectors';
+import { rootStateForTesting } from '@store/types';
 
-const dispatch = jest.fn((action) => action);
+const dispatch = jest.fn();
 
 jest.mock('firebase', () => {
   return {
@@ -15,6 +22,15 @@ jest.mock('firebase', () => {
     createUserWithEmailAndPassword: jest.fn(),
     signInWithEmailAndPassword: jest.fn(),
     signOut: jest.fn(),
+    database: jest.fn(() => ({
+      ref: jest.fn(() => ({
+        child: jest.fn(() => ({
+          child: jest.fn(() => ({
+            set: jest.fn(),
+          })),
+        })),
+      })),
+    })),
   };
 });
 
@@ -26,6 +42,13 @@ describe('Auth actions testing', () => {
     const email = 'test@mail.ru';
     const password = '123456';
     await authRegisterAction({ email, password })(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      payload: {
+        email: 'bob@mail.ru',
+        uid: '789',
+      },
+      type: AuthActionTypes.REGISTER_SUCCESS,
+    });
     expect(firebase.auth).toHaveBeenCalled();
     expect(firebase.auth().createUserWithEmailAndPassword).toBeCalledWith(email, password);
   });
@@ -42,6 +65,13 @@ describe('Auth actions testing', () => {
     await authLogoutAction()(dispatch);
     expect(firebase.auth).toHaveBeenCalled();
     expect(firebase.auth().signOut).toBeCalled();
+  });
+
+  it('authClearErrorAction', async () => {
+    await authClearErrorAction()(dispatch);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: AuthActionTypes.CLEAR_ERROR,
+    });
   });
 });
 
@@ -134,5 +164,11 @@ describe('Auth reducer testing', () => {
       error: null,
       user: null,
     });
+  });
+});
+
+describe('Auth selector testing', () => {
+  it('Should generate correct selector', () => {
+    expect(authSelector(rootStateForTesting)).toEqual({ error: null, user: null });
   });
 });

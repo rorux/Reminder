@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
-import { authClearErrorAction } from '@store/auth/actions';
 
 export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -12,18 +10,18 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert
 
 export interface IAuthSnackbarProps {
   message: string;
+  clearError: () => void;
 }
 
-const AuthSnackbar: React.FC<IAuthSnackbarProps> = ({ message }) => {
+const AuthSnackbar: React.FC<IAuthSnackbarProps> = ({ message, clearError }) => {
   const [openSnackbar, setOpenSnackbar] = useState<boolean>(true);
-  const dispatch = useDispatch();
 
   const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
       return;
     }
     setOpenSnackbar(false);
-    dispatch(authClearErrorAction());
+    clearError();
   };
 
   const action = (

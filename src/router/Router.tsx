@@ -11,11 +11,11 @@ const Login = React.lazy(() => import('@screens/Login'));
 const Register = React.lazy(() => import('@screens/Register'));
 const NotFound = React.lazy(() => import('@screens/NotFound'));
 
-export const Calendar = React.lazy(() => import('@components/Calendar'));
-export const Dashboard = React.lazy(() => import('@components/Dashboard'));
-export const Profile = React.lazy(() => import('@components/Profile'));
-export const RecordCreate = React.lazy(() => import('@components/RecordCreate'));
-export const RecordEdit = React.lazy(() => import('@components/RecordEdit'));
+export const Calendar = React.lazy(() => import('@components/containers/Calendar'));
+export const Dashboard = React.lazy(() => import('@components/containers/Dashboard'));
+export const Profile = React.lazy(() => import('@components/containers/Profile'));
+export const RecordCreate = React.lazy(() => import('@components/containers/RecordCreate'));
+export const RecordEdit = React.lazy(() => import('@components/containers/RecordEdit'));
 
 export type TReactLazy = typeof Calendar;
 

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu component Snapshot of Menu component 1`] = `
+<Fragment>
+  <Link
+    to="/calendar"
+  >
+    <ForwardRef(ListItem)
+      button={true}
+    >
+      <ForwardRef(ListItemIcon)>
+        <Memo(ForwardRef(DashboardIcon)) />
+      </ForwardRef(ListItemIcon)>
+      <ForwardRef(ListItemText)
+        primary="Календарь"
+      />
+    </ForwardRef(ListItem)>
+  </Link>
+  <Link
+    to="/dashboard"
+  >
+    <ForwardRef(ListItem)
+      button={true}
+    >
+      <ForwardRef(ListItemIcon)>
+        <Memo(ForwardRef(BarChartIcon)) />
+      </ForwardRef(ListItemIcon)>
+      <ForwardRef(ListItemText)
+        primary="Напоминания"
+      />
+    </ForwardRef(ListItem)>
+  </Link>
+  <Link
+    to="/profile"
+  >
+    <ForwardRef(ListItem)
+      button={true}
+    >
+      <ForwardRef(ListItemIcon)>
+        <Memo(ForwardRef(PeopleIcon)) />
+      </ForwardRef(ListItemIcon)>
+      <ForwardRef(ListItemText)
+        primary="Профиль"
+      />
+    </ForwardRef(ListItem)>
+  </Link>
+</Fragment>
+`;

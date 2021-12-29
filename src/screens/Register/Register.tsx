@@ -16,7 +16,7 @@ import { ROUTES } from '@router/types';
 import TextFieldWrapper from '@components/formsUI/TextField';
 import AuthSnackbar from '@components/AuthSnackbar';
 import { authSelector } from '@store/auth/selectors';
-import { authRegisterAction } from '@store/auth/actions';
+import { authRegisterAction, authClearErrorAction } from '@store/auth/actions';
 
 const theme = createTheme();
 
@@ -55,9 +55,13 @@ export default function Register() {
     [dispatch]
   );
 
+  const clearError = (): void => {
+    dispatch(authClearErrorAction());
+  };
+
   return (
     <ThemeProvider theme={theme}>
-      {error && <AuthSnackbar message={error} />}
+      {error && <AuthSnackbar message={error} clearError={clearError} />}
       <Container component="main" maxWidth="xs" data-test="registerComponent">
         <CssBaseline />
         <Box

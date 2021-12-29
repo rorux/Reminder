@@ -4,6 +4,12 @@ export const PERIOD = [
   { value: 'quarterly', name: 'Ежеквартально' },
 ];
 
+export const PERIOD_MAP = {
+  weekly: 'Еженедельно',
+  monthly: 'Ежемесячно',
+  quarterly: 'Ежеквартально',
+};
+
 export const WEEKDAY = [
   { value: '1', name: 'Понедельник' },
   { value: '2', name: 'Вторник' },
@@ -55,9 +61,9 @@ export const MONTH_DAYS = [
 ];
 
 export const QUARTER = [
-  { value: '1', name: 'Янв, Апр, Июл, Окт' },
-  { value: '2', name: 'Фев, Май, Авг, Ноя' },
-  { value: '3', name: 'Мар, Июн, Сен, Дек' },
+  { value: 'Янв, Апр, Июл, Окт', name: 'Янв, Апр, Июл, Окт' },
+  { value: 'Фев, Май, Авг, Ноя', name: 'Фев, Май, Авг, Ноя' },
+  { value: 'Мар, Июн, Сен, Дек', name: 'Мар, Июн, Сен, Дек' },
 ];
 
 export const HOLIDAYS_2022 = [

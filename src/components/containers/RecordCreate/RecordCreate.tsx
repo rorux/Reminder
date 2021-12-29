@@ -1,4 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { v1 as uuid } from 'uuid';
 import Grid from '@mui/material/Grid';
 import RecordSelect from '@components/formsUI/RecordSelect';
 import Typography from '@mui/material/Typography';
@@ -12,6 +14,8 @@ import {
 } from '@utils/records/ComputedDays';
 import { TPeriod, TWeekDay, THolidays, TMonthDays, TQuarter } from '@utils/records/types';
 import { PERIOD, WEEKDAY, HOLIDAYS, MONTH_DAYS, QUARTER } from '@utils/records/constants';
+import { addRecordWithFirebase } from '@store/records/actions';
+import { TRecord } from '@store/records/types';
 
 const RecordCreate = () => {
   const [title, setTitle] = React.useState('');
@@ -29,6 +33,8 @@ const RecordCreate = () => {
 
   const [isFormReady, setIsFormReady] = React.useState<TPeriod>('');
   const [loadingSubmit, setLoadingSubmit] = React.useState<boolean>(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (periodValue === 'weekly' && title && weeklyWeekDay && weeklyHolidays) {
@@ -65,16 +71,29 @@ const RecordCreate = () => {
   const handleClickSubmit = useCallback(() => {
     setLoadingSubmit(true);
     let days: Array<number> = [];
+    const record: TRecord = { id: uuid(), title, period: '', holidays: '', days: [] };
     if (periodValue === 'weekly') {
       days = weeklyComputedDays(weeklyWeekDay, weeklyHolidays);
+      record.period = 'weekly';
+      record.weekday = weeklyWeekDay;
+      record.holidays = weeklyHolidays;
     } else if (periodValue === 'monthly') {
       days = monthlyComputedDays(monthlyDay, monthlyHolidays);
+      record.period = 'monthly';
+      record.monthday = monthlyDay;
+      record.holidays = monthlyHolidays;
     } else if (periodValue === 'quarterly') {
       days = quarterlyComputedDays(quarterlyMonths, quarterlyDay, quarterlyHolidays);
+      record.period = 'quarterly';
+      record.quarter = quarterlyMonths;
+      record.monthday = quarterlyDay;
+      record.holidays = quarterlyHolidays;
     } else throw Error;
-    console.log(days);
+    record.days = days;
+    dispatch(addRecordWithFirebase(record));
     setLoadingSubmit(false);
   }, [
+    title,
     periodValue,
     weeklyWeekDay,
     weeklyHolidays,
@@ -83,6 +102,7 @@ const RecordCreate = () => {
     quarterlyMonths,
     quarterlyDay,
     quarterlyHolidays,
+    dispatch,
   ]);
 
   return (
