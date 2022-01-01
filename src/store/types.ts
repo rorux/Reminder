@@ -11,5 +11,5 @@ export interface IRootState {
 export const rootStateForTesting = {
   auth: { error: null, user: null },
   app: { isDrawerOpen: false },
-  records: { recordList: [] },
+  records: { recordList: [], loading: false, error: null },
 };

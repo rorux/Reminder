@@ -90,7 +90,13 @@ export default function Login() {
                     <TextFieldWrapper fullWidth name="password" label="Введите пароль" />
                   </Grid>
                 </Grid>
-                <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                <Button
+                  data-test="login-submit"
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
                   Войти
                 </Button>
               </Form>

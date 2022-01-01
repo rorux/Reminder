@@ -22,6 +22,8 @@ it('Should render RecordsAccordion component', () => {
         '8-го числа в январе, апреле, июле, октябре. В случае выпадения на выходной или праздничный день перенос на ближайший рабочий день ДО наступления срока.',
     },
   ];
-  const component = shallow(<RecordsAccordion recordListRender={recordListRender} />);
+  const component = shallow(
+    <RecordsAccordion recordListRender={recordListRender} handleDelete={jest.fn()} />
+  );
   expect(component).toMatchSnapshot();
 });

@@ -2,77 +2,33 @@
 
 exports[`Should render RecordsAccordion component 1`] = `
 <Fragment>
-  <ForwardRef(Accordion)
+  <RecordItem
     expanded={false}
+    handleChange={[Function]}
+    handleDelete={[MockFunction]}
     key="1"
-    onChange={[Function]}
-  >
-    <ForwardRef(AccordionSummary)
-      aria-controls="panel1bh-content"
-      expandIcon={<Memo />}
-      id="panel1bh-header"
-    >
-      <ForwardRef(Typography)
-        sx={
-          Object {
-            "flexShrink": 0,
-            "width": "33%",
-          }
-        }
-      >
-        Ежемесячно
-      </ForwardRef(Typography)>
-      <ForwardRef(Typography)
-        sx={
-          Object {
-            "color": "text.secondary",
-          }
-        }
-      >
-        title of monthly remind
-      </ForwardRef(Typography)>
-    </ForwardRef(AccordionSummary)>
-    <ForwardRef(AccordionDetails)>
-      <ForwardRef(Typography)>
-        8-го числа. В случае выпадения на выходной или праздничный день перенос на ближайший рабочий день ПОСЛЕ наступления срока.
-      </ForwardRef(Typography)>
-    </ForwardRef(AccordionDetails)>
-  </ForwardRef(Accordion)>
-  <ForwardRef(Accordion)
+    record={
+      Object {
+        "comment": "8-го числа. В случае выпадения на выходной или праздничный день перенос на ближайший рабочий день ПОСЛЕ наступления срока.",
+        "id": "1",
+        "period": "Ежемесячно",
+        "title": "title of monthly remind",
+      }
+    }
+  />
+  <RecordItem
     expanded={false}
+    handleChange={[Function]}
+    handleDelete={[MockFunction]}
     key="2"
-    onChange={[Function]}
-  >
-    <ForwardRef(AccordionSummary)
-      aria-controls="panel2bh-content"
-      expandIcon={<Memo />}
-      id="panel2bh-header"
-    >
-      <ForwardRef(Typography)
-        sx={
-          Object {
-            "flexShrink": 0,
-            "width": "33%",
-          }
-        }
-      >
-        Ежеквартально
-      </ForwardRef(Typography)>
-      <ForwardRef(Typography)
-        sx={
-          Object {
-            "color": "text.secondary",
-          }
-        }
-      >
-        title of quarterly remind
-      </ForwardRef(Typography)>
-    </ForwardRef(AccordionSummary)>
-    <ForwardRef(AccordionDetails)>
-      <ForwardRef(Typography)>
-        8-го числа в январе, апреле, июле, октябре. В случае выпадения на выходной или праздничный день перенос на ближайший рабочий день ДО наступления срока.
-      </ForwardRef(Typography)>
-    </ForwardRef(AccordionDetails)>
-  </ForwardRef(Accordion)>
+    record={
+      Object {
+        "comment": "8-го числа в январе, апреле, июле, октябре. В случае выпадения на выходной или праздничный день перенос на ближайший рабочий день ДО наступления срока.",
+        "id": "2",
+        "period": "Ежеквартально",
+        "title": "title of quarterly remind",
+      }
+    }
+  />
 </Fragment>
 `;

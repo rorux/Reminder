@@ -7,4 +7,5 @@ export type TRecordAccordion = {
 
 export type TRecordsAccordionProps = {
   recordListRender: Array<TRecordAccordion>;
+  handleDelete: (event: React.MouseEvent<HTMLElement>, id: string) => void;
 };

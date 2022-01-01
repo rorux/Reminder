@@ -1,69 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dashboard component Snapshot of Dashboard component 1`] = `
-<div
-  data-test="dashboard"
->
-  <ForwardRef(Grid)
-    container={true}
+<Fragment>
+  <div
+    data-test="dashboard"
   >
     <ForwardRef(Grid)
-      item={true}
-      sm={true}
+      container={true}
     >
-      <ForwardRef(Typography)
-        display="block"
-        gutterBottom={true}
-        variant="overline"
+      <ForwardRef(Grid)
+        item={true}
+        sm={true}
       >
-        Список дел
-      </ForwardRef(Typography)>
-    </ForwardRef(Grid)>
-    <ForwardRef(Grid)
-      item={true}
-    >
-      <Link
-        to="/create"
-      >
-        <ForwardRef(Tooltip)
-          placement="left"
-          title="Создать новое напоминание"
+        <ForwardRef(Typography)
+          display="block"
+          gutterBottom={true}
+          variant="overline"
         >
-          <ForwardRef(Fab)
-            aria-label="add"
-            color="inherit"
-            size="small"
-            sx={
-              Object {
-                "boxShadow": 0,
-                "mb": 1,
-              }
-            }
-            variant="extended"
+          Список дел
+        </ForwardRef(Typography)>
+      </ForwardRef(Grid)>
+      <ForwardRef(Grid)
+        item={true}
+      >
+        <Link
+          to="/create"
+        >
+          <ForwardRef(Tooltip)
+            placement="left"
+            title="Создать новое напоминание"
           >
-            <Memo(ForwardRef(AddIcon)) />
-          </ForwardRef(Fab)>
-        </ForwardRef(Tooltip)>
-      </Link>
+            <ForwardRef(Fab)
+              aria-label="add"
+              color="inherit"
+              size="small"
+              sx={
+                Object {
+                  "boxShadow": 0,
+                  "mb": 1,
+                }
+              }
+              variant="extended"
+            >
+              <Memo(ForwardRef(AddIcon)) />
+            </ForwardRef(Fab)>
+          </ForwardRef(Tooltip)>
+        </Link>
+      </ForwardRef(Grid)>
     </ForwardRef(Grid)>
-  </ForwardRef(Grid)>
-  <RecordsAccordion
-    recordListRender={
-      Array [
-        Object {
-          "comment": "8-го числа. В случае выпадения на выходной или праздничный день перенос на ближайший рабочий день ПОСЛЕ наступления срока.",
-          "id": "1",
-          "period": "Ежемесячно",
-          "title": "title of monthly remind",
-        },
-        Object {
-          "comment": "8-го числа в январе, апреле, июле, октябре. В случае выпадения на выходной или праздничный день перенос на ближайший рабочий день ДО наступления срока.",
-          "id": "2",
-          "period": "Ежеквартально",
-          "title": "title of quarterly remind",
-        },
-      ]
-    }
-  />
-</div>
+    <RecordsAccordion
+      handleDelete={[Function]}
+      recordListRender={
+        Array [
+          Object {
+            "comment": "8-го числа. В случае выпадения на выходной или праздничный день перенос на ближайший рабочий день ПОСЛЕ наступления срока.",
+            "id": "1",
+            "period": "Ежемесячно",
+            "title": "title of monthly remind",
+          },
+          Object {
+            "comment": "8-го числа в январе, апреле, июле, октябре. В случае выпадения на выходной или праздничный день перенос на ближайший рабочий день ДО наступления срока.",
+            "id": "2",
+            "period": "Ежеквартально",
+            "title": "title of quarterly remind",
+          },
+        ]
+      }
+    />
+  </div>
+</Fragment>
 `;

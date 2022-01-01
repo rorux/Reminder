@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirm component Snapshot of Confirm component 1`] = `
+<Fragment>
+  <ForwardRef(Dialog)
+    aria-describedby="alert-dialog-description"
+    aria-labelledby="alert-dialog-title"
+    onClose={[Function]}
+    open={true}
+  >
+    <ForwardRef(DialogContent)>
+      <ForwardRef(DialogContentText)>
+        Удалить напоминание?
+      </ForwardRef(DialogContentText)>
+    </ForwardRef(DialogContent)>
+    <ForwardRef(DialogActions)>
+      <ForwardRef(Button)
+        data-test="disagree"
+        onClick={[Function]}
+      >
+        Отмена
+      </ForwardRef(Button)>
+      <ForwardRef(Button)
+        autoFocus={true}
+        data-test="agree"
+        onClick={[Function]}
+      >
+        Удалить
+      </ForwardRef(Button)>
+    </ForwardRef(DialogActions)>
+  </ForwardRef(Dialog)>
+</Fragment>
+`;

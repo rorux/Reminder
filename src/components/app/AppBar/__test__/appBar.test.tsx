@@ -3,7 +3,7 @@ import * as redux from 'react-redux';
 import IconButton from '@mui/material/IconButton';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Enzyme, { shallow } from 'enzyme';
-import AppBar from '../AppBar';
+import AppBar, { AppBarStyled } from '../AppBar';
 import { AppActionTypes } from '@store/app/types';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -38,6 +38,10 @@ describe('AppBar component', () => {
 
   it('Should render AppBar component', () => {
     expect(component).toMatchSnapshot();
+  });
+
+  it('Should render AppBarStyled component', () => {
+    expect(component.find(AppBarStyled)).toHaveLength(1);
   });
 
   it('Should dispatch drawerToggleAction when clicked toggle', () => {

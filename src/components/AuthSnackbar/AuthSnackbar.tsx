@@ -3,15 +3,11 @@ import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import { IAuthSnackbarProps } from './types';
 
 export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
-
-export interface IAuthSnackbarProps {
-  message: string;
-  clearError: () => void;
-}
 
 const AuthSnackbar: React.FC<IAuthSnackbarProps> = ({ message, clearError }) => {
   const [openSnackbar, setOpenSnackbar] = useState<boolean>(true);

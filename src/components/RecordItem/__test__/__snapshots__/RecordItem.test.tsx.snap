@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecordItem component Should render RecordItem component 1`] = `
+<ForwardRef(Accordion)
+  expanded={false}
+  key="id"
+>
+  <ForwardRef(AccordionSummary)
+    aria-controls="panelidbh-content"
+    expandIcon={<Memo />}
+    id="panelidbh-header"
+  >
+    <ForwardRef(Typography)
+      sx={
+        Object {
+          "flexShrink": 0,
+          "width": "33%",
+        }
+      }
+    >
+      period
+    </ForwardRef(Typography)>
+    <ForwardRef(Typography)
+      sx={
+        Object {
+          "color": "text.secondary",
+        }
+      }
+    >
+      title
+    </ForwardRef(Typography)>
+  </ForwardRef(AccordionSummary)>
+  <ForwardRef(AccordionDetails)>
+    <ForwardRef(Typography)>
+      comment
+    </ForwardRef(Typography)>
+    <ForwardRef(Stack)
+      direction="row"
+      spacing={2}
+      sx={
+        Object {
+          "mt": 2,
+        }
+      }
+    >
+      <ForwardRef(Button)
+        color="warning"
+        sx={
+          Object {
+            "boxShadow": 0,
+          }
+        }
+        variant="contained"
+      >
+        Изменить
+      </ForwardRef(Button)>
+      <ForwardRef(Button)
+        color="error"
+        data-test="delete-button"
+        onClick={[Function]}
+        sx={
+          Object {
+            "boxShadow": 0,
+          }
+        }
+        variant="contained"
+      >
+        Удалить
+      </ForwardRef(Button)>
+      <Confirm
+        handler={[MockFunction]}
+        id="id"
+        open={false}
+        setOpen={[Function]}
+      />
+    </ForwardRef(Stack)>
+  </ForwardRef(AccordionDetails)>
+</ForwardRef(Accordion)>
+`;

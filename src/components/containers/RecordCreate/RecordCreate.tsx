@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { v1 as uuid } from 'uuid';
 import Grid from '@mui/material/Grid';
 import RecordSelect from '@components/formsUI/RecordSelect';
@@ -16,8 +17,10 @@ import { TPeriod, TWeekDay, THolidays, TMonthDays, TQuarter } from '@utils/recor
 import { PERIOD, WEEKDAY, HOLIDAYS, MONTH_DAYS, QUARTER } from '@utils/records/constants';
 import { addRecordWithFirebase } from '@store/records/actions';
 import { TRecord } from '@store/records/types';
+import { ROUTES } from '@router/types';
 
 const RecordCreate = () => {
+  const [isCreated, setIsCreated] = React.useState(false);
   const [title, setTitle] = React.useState('');
   const [periodValue, setPeriodValue] = React.useState<TPeriod>('');
 
@@ -92,6 +95,7 @@ const RecordCreate = () => {
     record.days = days;
     dispatch(addRecordWithFirebase(record));
     setLoadingSubmit(false);
+    setIsCreated(true);
   }, [
     title,
     periodValue,
@@ -104,6 +108,8 @@ const RecordCreate = () => {
     quarterlyHolidays,
     dispatch,
   ]);
+
+  if (isCreated) return <Redirect to={ROUTES.DASHBOARD} />;
 
   return (
     <div data-test="record-create">

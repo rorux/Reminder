@@ -478,6 +478,7 @@ exports[`Login component Should render Login component 1`] = `
               </ForwardRef(Grid)>
             </ForwardRef(Grid)>
             <ForwardRef(Button)
+              data-test="login-submit"
               fullWidth={true}
               sx={
                 Object {

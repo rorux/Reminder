@@ -38,13 +38,29 @@ export type TRecord = {
 
 export interface IRecordsState {
   recordList: Array<TRecord>;
+  loading: boolean;
+  error: null | string;
 }
 
 export enum RecordsActionTypes {
   RECORDS_INIT = 'RECORDS::RECORDS_INIT',
+  RECORDS_SUCCESS = 'RECORDS::RECORDS_SUCCESS',
+  RECORDS_ERROR = 'RECORDS::RECORDS_ERROR',
+  RECORDS_DELETE = 'RECORDS::RECORDS_DELETE',
 }
 
-export interface IRecordsInitAction {
+interface IRecordsInitAction {
   type: RecordsActionTypes.RECORDS_INIT;
+}
+
+interface IRecordsSuccessAction {
+  type: RecordsActionTypes.RECORDS_SUCCESS;
   payload: Array<TRecord>;
 }
+
+interface IRecordsErrorAction {
+  type: RecordsActionTypes.RECORDS_ERROR;
+  payload: string;
+}
+
+export type TRecordsAction = IRecordsInitAction | IRecordsSuccessAction | IRecordsErrorAction;
