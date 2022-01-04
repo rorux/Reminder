@@ -38,8 +38,16 @@ export default function AppBar() {
   const { isDrawerOpen } = useSelector(appSelector);
   const dispatch = useDispatch();
 
-  const routeKey = getEnumKeyByEnumValue(ROUTES, useLocation().pathname);
-  const title = getEnumValueByEnumKey(ROUTES_NAME, routeKey);
+  const location = useLocation().pathname;
+
+  let title = '';
+
+  if (location.substring(1, 5) === 'edit') {
+    title = 'Редактирование записи';
+  } else {
+    const routeKey = getEnumKeyByEnumValue(ROUTES, location);
+    title = getEnumValueByEnumKey(ROUTES_NAME, routeKey);
+  }
 
   const toggleDrawer = useCallback(() => {
     dispatch(drawerToggleAction());

@@ -11,7 +11,7 @@ import { appSelector } from '@store/app/selectors';
 import { drawerToggleAction } from '@store/app/actions';
 import Menu from '../Menu';
 
-const DrawerStyled = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+export const DrawerStyled = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     '& .MuiDrawer-paper': {
       position: 'relative',

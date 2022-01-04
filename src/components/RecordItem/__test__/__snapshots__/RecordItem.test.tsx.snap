@@ -45,6 +45,8 @@ exports[`RecordItem component Should render RecordItem component 1`] = `
     >
       <ForwardRef(Button)
         color="warning"
+        data-test="edit-button"
+        onClick={[Function]}
         sx={
           Object {
             "boxShadow": 0,

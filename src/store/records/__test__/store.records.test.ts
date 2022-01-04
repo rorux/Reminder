@@ -1,5 +1,11 @@
 import firebase from 'firebase';
-import { addRecordWithFirebase, deleteRecordWithFirebase, initRecords } from '../actions';
+import {
+  addRecordWithFirebase,
+  getRecordFromFirebase,
+  changeRecordWithFirebase,
+  deleteRecordWithFirebase,
+  initRecords,
+} from '../actions';
 import { recordsSelector } from '../selectors';
 import { rootStateForTesting } from '@store/types';
 import { RecordsActionTypes } from '../types';
@@ -7,8 +13,10 @@ import { RecordsActionTypes } from '../types';
 const dispatch = jest.fn();
 
 const set = jest.fn();
+const on_ = jest.fn();
 const child = jest.fn(() => ({
   set,
+  on: on_,
   remove: jest.fn(),
 }));
 const on = jest.fn();
@@ -51,6 +59,21 @@ describe('Records actions testing', () => {
     expect(set).toHaveBeenCalledWith(record);
   });
 
+  it('changeRecordWithFirebase should call firebase methods', () => {
+    const record = {
+      id: '1',
+      title: 'title of monthly remind',
+      period: 'monthly',
+      monthday: '8',
+      holidays: 'afterHoliday',
+      days: [1642366800000, 1644872400000],
+    };
+
+    changeRecordWithFirebase(record)();
+    expect(firebase.auth).toHaveBeenCalled();
+    expect(set).toHaveBeenCalledWith(record);
+  });
+
   it('deleteRecordWithFirebase should call firebase methods', () => {
     const id = '123';
 
@@ -65,6 +88,14 @@ describe('Records actions testing', () => {
     expect(dispatch).toHaveBeenCalledWith({ type: RecordsActionTypes.RECORDS_INIT });
     expect(on).toHaveBeenCalled();
     expect(on.mock.calls[0][0]).toBe('value');
+  });
+
+  it('getRecordFromFirebase action creator', () => {
+    const id = '123';
+    getRecordFromFirebase(id)();
+    expect(firebase.auth).toHaveBeenCalled();
+    expect(on_).toHaveBeenCalled();
+    expect(on_.mock.calls[0][0]).toBe('value');
   });
 });
 

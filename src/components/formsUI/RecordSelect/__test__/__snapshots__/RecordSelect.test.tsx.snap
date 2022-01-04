@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecordSelect component Should render RecordSelect component 1`] = `
+<ForwardRef(Box)>
+  <ForwardRef(FormControl)
+    fullWidth={true}
+    required={true}
+  >
+    <ForwardRef(InputLabel)
+      id="select-label"
+    >
+      name
+    </ForwardRef(InputLabel)>
+    <ForwardRef(Select)
+      MenuProps={
+        Object {
+          "PaperProps": Object {
+            "style": Object {
+              "maxHeight": 170,
+            },
+          },
+        }
+      }
+      id="select"
+      label="name"
+      labelId="select-label"
+      onChange={[Function]}
+      value=""
+    >
+      <ForwardRef(MenuItem)
+        key="value"
+        value="value"
+      >
+        name
+      </ForwardRef(MenuItem)>
+    </ForwardRef(Select)>
+  </ForwardRef(FormControl)>
+</ForwardRef(Box)>
+`;

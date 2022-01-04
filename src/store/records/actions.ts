@@ -9,10 +9,34 @@ export const addRecordWithFirebase = (record: TRecord) => () => {
   }
 };
 
+export const changeRecordWithFirebase = (record: TRecord) => () => {
+  const uid = firebase.auth().currentUser?.uid;
+  if (uid) {
+    firebase.database().ref('users').child(uid).child('records').child(record.id).set(record);
+  }
+};
+
 export const deleteRecordWithFirebase = (id: string) => () => {
   const uid = firebase.auth().currentUser?.uid;
   if (uid) {
     firebase.database().ref('users').child(uid).child('records').child(id).remove();
+  }
+};
+
+export const getRecordFromFirebase = (id: string) => () => {
+  const uid = firebase.auth().currentUser?.uid;
+  let record;
+  if (uid) {
+    firebase
+      .database()
+      .ref('users')
+      .child(uid)
+      .child('records')
+      .child(id)
+      .on('value', (snapshot) => {
+        record = snapshot.val();
+      });
+    return record;
   }
 };
 

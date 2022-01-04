@@ -3,6 +3,7 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Enzyme, { shallow } from 'enzyme';
 import Snackbar from '@mui/material/Snackbar';
 import AuthSnackbar, { Alert } from '../AuthSnackbar';
+import MuiAlert from '@mui/material/Alert';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -10,6 +11,11 @@ describe('AuthSnackbar component', () => {
   it('Should render AuthSnackbar component with message prop', () => {
     const component = shallow(<AuthSnackbar message="Check message prop" clearError={jest.fn()} />);
     expect(component.find(`[data-test='snackbar-alert']`).text()).toBe('Check message prop');
+  });
+
+  it('Should render Alert', () => {
+    const component = shallow(<Alert />);
+    expect(component.find(MuiAlert)).toHaveLength(1);
   });
 
   it('Should change state and props when closing', () => {

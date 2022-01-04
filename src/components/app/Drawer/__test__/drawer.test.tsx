@@ -3,7 +3,7 @@ import * as redux from 'react-redux';
 import IconButton from '@mui/material/IconButton';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Enzyme, { shallow } from 'enzyme';
-import Drawer from '../Drawer';
+import Drawer, { DrawerStyled } from '../Drawer';
 import { AppActionTypes } from '@store/app/types';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -39,5 +39,11 @@ describe('Drawer component', () => {
     expect(mockDispatch.mock.calls[0][0]).toEqual({
       type: AppActionTypes.DRAWER_TOGGLE,
     });
+  });
+});
+
+describe('DrawerStyled component', () => {
+  it('Should render DrawerStyled component', () => {
+    expect(shallow(<DrawerStyled />)).toMatchSnapshot();
   });
 });

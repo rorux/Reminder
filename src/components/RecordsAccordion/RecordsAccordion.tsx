@@ -6,7 +6,7 @@ const RecordsAccordion: React.FC<TRecordsAccordionProps> = ({ recordListRender, 
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
   const handleChangeToggle =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+    (panel: string) => (event: React.SyntheticEvent | null, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
 

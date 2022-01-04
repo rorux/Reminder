@@ -6,6 +6,13 @@ import Menu from '../Menu';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useLocation: jest.fn(() => ({
+    pathname: '/dashboard',
+  })),
+}));
+
 const setUp = () => shallow(<Menu />);
 
 describe('Menu component', () => {

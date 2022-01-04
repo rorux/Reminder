@@ -12,10 +12,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert
 const AuthSnackbar: React.FC<IAuthSnackbarProps> = ({ message, clearError }) => {
   const [openSnackbar, setOpenSnackbar] = useState<boolean>(true);
 
-  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-    if (reason === 'clickaway') {
-      return;
-    }
+  const handleClose = () => {
     setOpenSnackbar(false);
     clearError();
   };

@@ -1,20 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-
-type TSelectParams = {
-  value: string | number;
-  name: string | number;
-};
-
-type TSelectProps = {
-  name: string;
-  params: Array<TSelectParams>;
-  setter: any;
-};
+import { TSelectProps } from './types';
 
 const MenuProps = {
   PaperProps: {
@@ -24,11 +14,15 @@ const MenuProps = {
   },
 };
 
-const RecordSelect: React.FC<TSelectProps> = ({ name, params, setter }) => {
+const RecordSelect: React.FC<TSelectProps> = ({ name, params, setter, value }) => {
   const [selectValue, setSelectValue] = React.useState('');
 
-  const handleChange = (event: SelectChangeEvent) => {
-    const value = event.target.value as string;
+  useEffect(() => {
+    if (value) setSelectValue(value);
+  }, [value]);
+
+  const handleChange = (event?: SelectChangeEvent) => {
+    const value = event?.target.value as string;
     setSelectValue(value);
     setter(value);
   };

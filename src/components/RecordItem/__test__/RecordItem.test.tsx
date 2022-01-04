@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Enzyme, { shallow } from 'enzyme';
 import RecordItem from '../RecordItem';
@@ -33,5 +34,11 @@ describe('RecordItem component', () => {
     // @ts-ignore
     component.find(`[data-test='delete-button']`).props().onClick();
     expect(component.find(Confirm).prop('open')).toBeTruthy();
+  });
+
+  it('Should redirect when clicked edit-button', () => {
+    // @ts-ignore
+    component.find(`[data-test='edit-button']`).props().onClick();
+    expect(component.find(Redirect)).toHaveLength(1);
   });
 });

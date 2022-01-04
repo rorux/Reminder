@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Router Should rendered with authed false 1`] = `
+<Switch>
+  <MainRoute
+    authed={false}
+    exact={true}
+    path="/"
+  />
+  <PrivateRoute
+    authed={false}
+    exact={true}
+    path="/calendar"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+      />
+    </Suspense>
+  </PrivateRoute>
+  <PrivateRoute
+    authed={false}
+    exact={true}
+    path="/dashboard"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+      />
+    </Suspense>
+  </PrivateRoute>
+  <PrivateRoute
+    authed={false}
+    exact={true}
+    path="/profile"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+      />
+    </Suspense>
+  </PrivateRoute>
+  <PrivateRoute
+    authed={false}
+    exact={true}
+    path="/create"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+      />
+    </Suspense>
+  </PrivateRoute>
+  <PrivateRoute
+    authed={false}
+    exact={true}
+    path="/edit/:id"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+      />
+    </Suspense>
+  </PrivateRoute>
+  <PublicRoute
+    authed={false}
+    exact={true}
+    path="/login"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy />
+    </Suspense>
+  </PublicRoute>
+  <PublicRoute
+    authed={false}
+    exact={true}
+    path="/register"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy />
+    </Suspense>
+  </PublicRoute>
+  <Route
+    path="/not-found"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy />
+    </Suspense>
+  </Route>
+  <Route>
+    <Redirect
+      to="/not-found"
+    />
+  </Route>
+</Switch>
+`;
+
+exports[`Router Should rendered with authed true 1`] = `
+<Switch>
+  <MainRoute
+    authed={true}
+    exact={true}
+    path="/"
+  />
+  <PrivateRoute
+    authed={true}
+    exact={true}
+    path="/calendar"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+      />
+    </Suspense>
+  </PrivateRoute>
+  <PrivateRoute
+    authed={true}
+    exact={true}
+    path="/dashboard"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+      />
+    </Suspense>
+  </PrivateRoute>
+  <PrivateRoute
+    authed={true}
+    exact={true}
+    path="/profile"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+      />
+    </Suspense>
+  </PrivateRoute>
+  <PrivateRoute
+    authed={true}
+    exact={true}
+    path="/create"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+      />
+    </Suspense>
+  </PrivateRoute>
+  <PrivateRoute
+    authed={true}
+    exact={true}
+    path="/edit/:id"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_init": [Function],
+            "_payload": Object {
+              "_result": [Function],
+              "_status": -1,
+            },
+          }
+        }
+      />
+    </Suspense>
+  </PrivateRoute>
+  <PublicRoute
+    authed={true}
+    exact={true}
+    path="/login"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy />
+    </Suspense>
+  </PublicRoute>
+  <PublicRoute
+    authed={true}
+    exact={true}
+    path="/register"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy />
+    </Suspense>
+  </PublicRoute>
+  <Route
+    path="/not-found"
+  >
+    <Suspense
+      fallback={<ForwardRef(CircularProgress) />}
+    >
+      <lazy />
+    </Suspense>
+  </Route>
+  <Route>
+    <Redirect
+      to="/not-found"
+    />
+  </Route>
+</Switch>
+`;

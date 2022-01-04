@@ -7,6 +7,7 @@ exports[`Menu component Snapshot of Menu component 1`] = `
   >
     <ForwardRef(ListItem)
       button={true}
+      selected={false}
     >
       <ForwardRef(ListItemIcon)>
         <Memo(ForwardRef(DashboardIcon)) />
@@ -21,6 +22,7 @@ exports[`Menu component Snapshot of Menu component 1`] = `
   >
     <ForwardRef(ListItem)
       button={true}
+      selected={true}
     >
       <ForwardRef(ListItemIcon)>
         <Memo(ForwardRef(BarChartIcon)) />
@@ -35,6 +37,7 @@ exports[`Menu component Snapshot of Menu component 1`] = `
   >
     <ForwardRef(ListItem)
       button={true}
+      selected={false}
     >
       <ForwardRef(ListItemIcon)>
         <Memo(ForwardRef(PeopleIcon)) />

@@ -86,7 +86,6 @@ export default function Register() {
               }}
               validationSchema={FORM_VALIDATION}
               onSubmit={handleSubmit}
-              className="form-register"
             >
               <Form>
                 <Grid container spacing={2}>

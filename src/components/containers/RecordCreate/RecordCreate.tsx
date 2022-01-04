@@ -68,7 +68,7 @@ const RecordCreate = () => {
   ]);
 
   const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(event.target.value as string);
+    setTitle(event?.target.value as string);
   };
 
   const handleClickSubmit = useCallback(() => {
@@ -91,7 +91,7 @@ const RecordCreate = () => {
       record.quarter = quarterlyMonths;
       record.monthday = quarterlyDay;
       record.holidays = quarterlyHolidays;
-    } else throw Error;
+    } else throw Error('error data');
     record.days = days;
     dispatch(addRecordWithFirebase(record));
     setLoadingSubmit(false);
@@ -119,6 +119,7 @@ const RecordCreate = () => {
       <Grid container spacing={3} maxWidth={600}>
         <Grid item xs={12}>
           <TextField
+            data-test="input-title"
             value={title}
             onChange={handleTitleChange}
             label="Наименование"
@@ -128,15 +129,26 @@ const RecordCreate = () => {
           />
         </Grid>
         <Grid item xs={12}>
-          <RecordSelect name="Периодичность" params={PERIOD} setter={setPeriodValue} />
+          <RecordSelect
+            data-test="select-period-value"
+            name="Периодичность"
+            params={PERIOD}
+            setter={setPeriodValue}
+          />
         </Grid>
         {periodValue === 'weekly' && (
           <>
             <Grid item xs={12}>
-              <RecordSelect name="День недели" params={WEEKDAY} setter={setWeeklyWeekDay} />
+              <RecordSelect
+                data-test="select-weekly-weekday"
+                name="День недели"
+                params={WEEKDAY}
+                setter={setWeeklyWeekDay}
+              />
             </Grid>
             <Grid item xs={12}>
               <RecordSelect
+                data-test="select-weekly-holidays"
                 name="Праздники и выходные"
                 params={HOLIDAYS}
                 setter={setWeeklyHolidays}
@@ -147,10 +159,16 @@ const RecordCreate = () => {
         {periodValue === 'monthly' && (
           <>
             <Grid item xs={12}>
-              <RecordSelect name="Число" params={MONTH_DAYS} setter={setMonthlyDay} />
+              <RecordSelect
+                data-test="select-monthly-monthday"
+                name="Число"
+                params={MONTH_DAYS}
+                setter={setMonthlyDay}
+              />
             </Grid>
             <Grid item xs={12}>
               <RecordSelect
+                data-test="select-monthly-holidays"
                 name="Праздники и выходные"
                 params={HOLIDAYS}
                 setter={setMonthlyHolidays}
@@ -161,13 +179,24 @@ const RecordCreate = () => {
         {periodValue === 'quarterly' && (
           <>
             <Grid item xs={12}>
-              <RecordSelect name="Месяцы" params={QUARTER} setter={setQuarterlyMonths} />
-            </Grid>
-            <Grid item xs={12}>
-              <RecordSelect name="Число" params={MONTH_DAYS} setter={setQuarterlyDay} />
+              <RecordSelect
+                data-test="select-quarterly-months"
+                name="Месяцы"
+                params={QUARTER}
+                setter={setQuarterlyMonths}
+              />
             </Grid>
             <Grid item xs={12}>
               <RecordSelect
+                data-test="select-quarterly-monthday"
+                name="Число"
+                params={MONTH_DAYS}
+                setter={setQuarterlyDay}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <RecordSelect
+                data-test="select-quarterly-holidays"
                 name="Праздники и выходные"
                 params={HOLIDAYS}
                 setter={setQuarterlyHolidays}

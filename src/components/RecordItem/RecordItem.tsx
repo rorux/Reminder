@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -16,6 +17,10 @@ const RecordItem: React.FC<TRecordItemProps> = ({
   handleDelete,
 }) => {
   const [isOpenConfirm, setIsOpenConfirm] = React.useState(false);
+  const [isEdit, setIsEdit] = React.useState(false);
+
+  if (isEdit) return <Redirect to={`/edit/${record.id}`} />;
+
   return (
     <Accordion
       expanded={expanded === `panel${record.id}`}
@@ -33,7 +38,13 @@ const RecordItem: React.FC<TRecordItemProps> = ({
       <AccordionDetails>
         <Typography>{record.comment}</Typography>
         <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
-          <Button variant="contained" color="warning" sx={{ boxShadow: 0 }}>
+          <Button
+            data-test="edit-button"
+            variant="contained"
+            color="warning"
+            sx={{ boxShadow: 0 }}
+            onClick={() => setIsEdit(true)}
+          >
             Изменить
           </Button>
           <Button

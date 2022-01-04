@@ -29,3 +29,45 @@ exports[`Drawer component Should render Drawer component 1`] = `
   </ForwardRef(List)>
 </Styled(ForwardRef(Drawer))>
 `;
+
+exports[`DrawerStyled component Should render DrawerStyled component 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "insert": [Function],
+      "inserted": Object {
+        "1x1jwk9": true,
+      },
+      "key": "css",
+      "nonce": undefined,
+      "registered": Object {
+        "css-1x1jwk9": "& .MuiDrawer-paper{position:relative;white-space:nowrap;width:56px;transition:width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;box-sizing:border-box;overflow-x:hidden;@media (min-width:600px){width:72px;}}",
+      },
+      "sheet": StyleSheet {
+        "_insertTag": [Function],
+        "before": null,
+        "container": undefined,
+        "ctr": 0,
+        "insertionPoint": undefined,
+        "isSpeedy": false,
+        "key": "css",
+        "nonce": undefined,
+        "prepend": undefined,
+        "tags": Array [],
+      },
+    }
+  }
+>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-1x1jwk9 .MuiDrawer-paper{position:relative;white-space:nowrap;width:56px;-webkit-transition:width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;transition:width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;box-sizing:border-box;overflow-x:hidden;}@media (min-width:600px){.css-1x1jwk9 .MuiDrawer-paper{width:72px;}}",
+      }
+    }
+    data-emotion="css 1x1jwk9"
+  />
+  <ForwardRef(Drawer)
+    className="css-1x1jwk9"
+  />
+</ContextProvider>
+`;

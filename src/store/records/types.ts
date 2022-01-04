@@ -36,6 +36,17 @@ export type TRecord = {
   days: Array<number>;
 };
 
+export type TRecordEdit = {
+  id: string;
+  title: string;
+  period: TPeriod;
+  weekday?: TWeekDay;
+  monthday?: TMonthDays;
+  quarter?: TQuarter;
+  holidays: THolidays;
+  days: Array<number>;
+};
+
 export interface IRecordsState {
   recordList: Array<TRecord>;
   loading: boolean;

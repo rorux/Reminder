@@ -330,7 +330,6 @@ exports[`Register component Should render Register component 1`] = `
         }
       >
         <Formik
-          className="form-register"
           initialValues={
             Object {
               "email": "",

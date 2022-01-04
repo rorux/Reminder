@@ -2,28 +2,24 @@ import React from 'react';
 import * as redux from 'react-redux';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Enzyme, { shallow } from 'enzyme';
+import { Formik } from 'formik';
 import Login from '../Login';
+import AuthSnackbar from '@components/AuthSnackbar';
 
 Enzyme.configure({ adapter: new Adapter() });
 
 const setUp = () => shallow(<Login />);
 describe('Login component', () => {
   let component: Enzyme.ShallowWrapper;
-  let spyOnUseSelector;
+  let spyOnUseSelector: any;
   let spyOnUseDispatch;
-  let asyncFunc: jest.Mock;
   let mockDispatch: jest.Mock;
 
   beforeEach(() => {
     spyOnUseSelector = jest.spyOn(redux, 'useSelector');
-    spyOnUseSelector.mockReturnValue({
-      error: null,
-    });
     spyOnUseDispatch = jest.spyOn(redux, 'useDispatch');
-    asyncFunc = jest.fn();
-    mockDispatch = jest.fn(() => asyncFunc);
+    mockDispatch = jest.fn();
     spyOnUseDispatch.mockReturnValue(mockDispatch);
-    component = setUp();
   });
 
   afterEach(() => {
@@ -31,6 +27,30 @@ describe('Login component', () => {
   });
 
   it('Should render Login component', () => {
+    spyOnUseSelector.mockReturnValue({
+      error: null,
+    });
+    component = setUp();
     expect(component).toMatchSnapshot();
+  });
+
+  it('Should dispatch authLoginAction when submit form', () => {
+    spyOnUseSelector.mockReturnValue({
+      error: null,
+    });
+    component = setUp();
+    // @ts-ignore
+    component.find(Formik).props().onSubmit({ email: 'email', password: 'password' });
+    expect(mockDispatch).toHaveBeenCalled();
+  });
+
+  it('Should dispatch authClearErrorAction', () => {
+    spyOnUseSelector.mockReturnValue({
+      error: 'error',
+    });
+    component = setUp();
+    // @ts-ignore
+    component.find(AuthSnackbar).props().clearError();
+    expect(mockDispatch).toHaveBeenCalled();
   });
 });

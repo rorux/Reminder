@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecordCreate component Should render RecordCreate component 1`] = `
+<div
+  data-test="record-create"
+>
+  <ForwardRef(Typography)
+    display="block"
+    gutterBottom={true}
+    sx={
+      Object {
+        "mb": 1,
+      }
+    }
+    variant="overline"
+  >
+    Заполните форму
+  </ForwardRef(Typography)>
+  <ForwardRef(Grid)
+    container={true}
+    maxWidth={600}
+    spacing={3}
+  >
+    <ForwardRef(Grid)
+      item={true}
+      xs={12}
+    >
+      <ForwardRef(TextField)
+        data-test="input-title"
+        fullWidth={true}
+        label="Наименование"
+        onChange={[Function]}
+        required={true}
+        value=""
+        variant="outlined"
+      />
+    </ForwardRef(Grid)>
+    <ForwardRef(Grid)
+      item={true}
+      xs={12}
+    >
+      <RecordSelect
+        data-test="select-period-value"
+        name="Периодичность"
+        params={
+          Array [
+            Object {
+              "name": "Еженедельно",
+              "value": "weekly",
+            },
+            Object {
+              "name": "Ежемесячно",
+              "value": "monthly",
+            },
+            Object {
+              "name": "Ежеквартально",
+              "value": "quarterly",
+            },
+          ]
+        }
+        setter={[Function]}
+      />
+    </ForwardRef(Grid)>
+    <ForwardRef(Grid)
+      item={true}
+    >
+      <ForwardRef(LoadingButton)
+        color="success"
+        disabled={true}
+        endIcon={<Memo />}
+        loading={false}
+        loadingPosition="end"
+        onClick={[Function]}
+        size="large"
+        variant="contained"
+      >
+        Сохранить
+      </ForwardRef(LoadingButton)>
+    </ForwardRef(Grid)>
+  </ForwardRef(Grid)>
+</div>
+`;

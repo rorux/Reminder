@@ -23,7 +23,7 @@ const Dashboard = () => {
     dispatch(initRecords());
   }, [dispatch]);
 
-  const handleDeleteRecord = (event: React.MouseEvent<HTMLElement>, id: string) => {
+  const handleDeleteRecord = (event: React.MouseEvent<HTMLElement> | null, id: string) => {
     dispatch(deleteRecordWithFirebase(id));
   };
 
@@ -62,7 +62,7 @@ const Dashboard = () => {
               handleDelete={handleDeleteRecord}
             />
           ) : (
-            <Typography variant="body2" gutterBottom>
+            <Typography data-test="empty-list" variant="body2" gutterBottom>
               У Вас нет сохраненных записей. Создайте напоминание, кликнув на &quot;плюс&ldquo; в
               правом верхнем углу.
             </Typography>
