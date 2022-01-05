@@ -12,9 +12,10 @@ import RecordsAccordion from '@components/RecordsAccordion';
 import { initRecords, deleteRecordWithFirebase } from '@store/records/actions';
 import { recordsSelector } from '@store/records/selectors';
 import RecordListRenderer from '@utils/records/RecordListRenderer';
+import './style.scss';
 
 const Dashboard = () => {
-  const { recordList, error, loading } = useSelector(recordsSelector);
+  const { recordList, loading } = useSelector(recordsSelector);
   const dispatch = useDispatch();
 
   const recordListRender = RecordListRenderer(recordList);
@@ -32,9 +33,9 @@ const Dashboard = () => {
       {loading ? (
         <CircularProgress />
       ) : (
-        <div data-test="dashboard">
+        <div data-test="dashboard" className="dashboard">
           <Grid container>
-            <Grid item sm>
+            <Grid item sm flexGrow={1}>
               <Typography variant="overline" display="block" gutterBottom>
                 Список дел
               </Typography>
@@ -56,17 +57,19 @@ const Dashboard = () => {
             </Grid>
           </Grid>
 
-          {recordListRender.length ? (
-            <RecordsAccordion
-              recordListRender={recordListRender}
-              handleDelete={handleDeleteRecord}
-            />
-          ) : (
-            <Typography data-test="empty-list" variant="body2" gutterBottom>
-              У Вас нет сохраненных записей. Создайте напоминание, кликнув на &quot;плюс&ldquo; в
-              правом верхнем углу.
-            </Typography>
-          )}
+          <Grid container>
+            {recordListRender.length ? (
+              <RecordsAccordion
+                recordListRender={recordListRender}
+                handleDelete={handleDeleteRecord}
+              />
+            ) : (
+              <Typography data-test="empty-list" variant="body2" gutterBottom>
+                У Вас нет сохраненных записей. Создайте напоминание, кликнув на &quot;плюс&ldquo; в
+                правом верхнем углу.
+              </Typography>
+            )}
+          </Grid>
         </div>
       )}
     </>

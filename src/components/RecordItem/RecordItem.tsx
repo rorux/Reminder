@@ -25,7 +25,6 @@ const RecordItem: React.FC<TRecordItemProps> = ({
     <Accordion
       expanded={expanded === `panel${record.id}`}
       onChange={handleChange(`panel${record.id}`)}
-      key={record.id}
     >
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
@@ -33,9 +32,14 @@ const RecordItem: React.FC<TRecordItemProps> = ({
         id={`panel${record.id}bh-header`}
       >
         <Typography sx={{ width: '33%', flexShrink: 0 }}>{record.period}</Typography>
-        <Typography sx={{ color: 'text.secondary' }}>{record.title}</Typography>
+        <Typography display={{ xs: 'none', md: 'block' }} sx={{ color: 'text.secondary' }}>
+          {record.title}
+        </Typography>
       </AccordionSummary>
       <AccordionDetails>
+        <Typography display={{ md: 'none', xs: 'block' }} sx={{ color: 'text.secondary' }} mb={1}>
+          {record.title}
+        </Typography>
         <Typography>{record.comment}</Typography>
         <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
           <Button

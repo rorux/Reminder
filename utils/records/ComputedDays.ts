@@ -1,7 +1,7 @@
 import { TWeekDay, THolidays, TMonthDays, TQuarter } from './types';
 import { HOLIDAYS_2022 } from './constants';
 
-const DAY_MS = 60 * 60 * 24 * 1000;
+export const DAY_MS = 60 * 60 * 24 * 1000;
 
 export const getDaysBeforeHolidays = (array: Array<number>): Array<number> => {
   const dates: Array<number> = [];

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import firebase from 'firebase';
 import Router from './router/Router';
-import { Provider } from 'react-redux';
 import { store } from './store';
+import { deleteRecordWithFirebase } from '@store/records/actions';
 
 const App: React.FC = () => {
   const [authed, setAuthed] = useState<boolean | null>(null);

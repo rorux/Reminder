@@ -3,7 +3,6 @@
 exports[`RecordItem component Should render RecordItem component 1`] = `
 <ForwardRef(Accordion)
   expanded={false}
-  key="id"
 >
   <ForwardRef(AccordionSummary)
     aria-controls="panelidbh-content"
@@ -21,6 +20,12 @@ exports[`RecordItem component Should render RecordItem component 1`] = `
       period
     </ForwardRef(Typography)>
     <ForwardRef(Typography)
+      display={
+        Object {
+          "md": "block",
+          "xs": "none",
+        }
+      }
       sx={
         Object {
           "color": "text.secondary",
@@ -31,6 +36,22 @@ exports[`RecordItem component Should render RecordItem component 1`] = `
     </ForwardRef(Typography)>
   </ForwardRef(AccordionSummary)>
   <ForwardRef(AccordionDetails)>
+    <ForwardRef(Typography)
+      display={
+        Object {
+          "md": "none",
+          "xs": "block",
+        }
+      }
+      mb={1}
+      sx={
+        Object {
+          "color": "text.secondary",
+        }
+      }
+    >
+      title
+    </ForwardRef(Typography)>
     <ForwardRef(Typography)>
       comment
     </ForwardRef(Typography)>
