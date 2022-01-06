@@ -13,6 +13,7 @@ import Month from '../Month';
 import { getMonthName } from './constants';
 import { recordsSelector } from '@store/records/selectors';
 import './style.scss';
+import Modal from '@components/Modal';
 
 const todayDate = new Date();
 const todayParse = Date.parse(
@@ -95,6 +96,7 @@ const Calendar = () => {
               </MyContext.Provider>
             </Paper>
           </Box>
+          <Modal />
         </div>
       )}
     </>

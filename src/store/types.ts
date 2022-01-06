@@ -10,6 +10,6 @@ export interface IRootState {
 
 export const rootStateForTesting = {
   auth: { error: null, user: null },
-  app: { isDrawerOpen: false },
+  app: { isDrawerOpen: false, isModalRecordsOpen: false, modalRecords: [], modalDate: null },
   records: { recordList: [], loading: false, error: null },
 };

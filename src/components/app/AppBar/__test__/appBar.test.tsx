@@ -1,6 +1,5 @@
 import React from 'react';
 import * as redux from 'react-redux';
-import IconButton from '@mui/material/IconButton';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Enzyme, { shallow } from 'enzyme';
 import AppBar, { AppBarStyled } from '../AppBar';
@@ -46,10 +45,16 @@ describe('AppBar component', () => {
 
   it('Should dispatch drawerToggleAction when clicked toggle', () => {
     // @ts-ignore
-    component.find(IconButton).props().onClick();
+    component.find(`[data-test='toggle-drawer']`).props().onClick();
     expect(mockDispatch.mock.calls[0][0]).toEqual({
       type: AppActionTypes.DRAWER_TOGGLE,
     });
+  });
+
+  it('Should dispatch authLogoutAction when clicked logout', () => {
+    // @ts-ignore
+    component.find(`[data-test='logout']`).props().onClick();
+    expect(mockDispatch).toHaveBeenCalled();
   });
 });
 

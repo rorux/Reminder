@@ -7,10 +7,12 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
+import { Logout } from '@mui/icons-material';
 import { appSelector } from '@store/app/selectors';
 import { drawerToggleAction } from '@store/app/actions';
 import { ROUTES, ROUTES_NAME } from '@router/types';
 import { getEnumKeyByEnumValue, getEnumValueByEnumKey } from '@utils/funcs';
+import { authLogoutAction } from '@store/auth/actions';
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
@@ -53,6 +55,10 @@ export default function AppBar() {
     dispatch(drawerToggleAction());
   }, [dispatch]);
 
+  const handlerLogout = useCallback(() => {
+    dispatch(authLogoutAction());
+  }, [dispatch]);
+
   return (
     <AppBarStyled position="absolute" open={isDrawerOpen}>
       <Toolbar
@@ -61,6 +67,7 @@ export default function AppBar() {
         }}
       >
         <IconButton
+          data-test="toggle-drawer"
           edge="start"
           color="inherit"
           aria-label="open drawer"
@@ -75,6 +82,9 @@ export default function AppBar() {
         <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
           {title}
         </Typography>
+        <IconButton data-test="logout" aria-label="logout" onClick={handlerLogout}>
+          <Logout sx={{ color: 'white' }} />
+        </IconButton>
       </Toolbar>
     </AppBarStyled>
   );

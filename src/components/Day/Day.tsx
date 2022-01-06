@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
+import { useDispatch } from 'react-redux';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { grey, green } from '@mui/material/colors';
 import { TDayProps, TStylesDay } from './types';
 import { MyContext } from '@components/containers/Calendar/Calendar';
+import { modalOpenAction } from '@store/app/actions';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.caption,
@@ -15,9 +17,10 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Day: React.FC<TDayProps> = ({ number, records }) => {
   const contextValue = useContext(MyContext);
+  const dispatch = useDispatch();
 
   const handleShowRecords = () => {
-    console.log(records);
+    if (number !== null) dispatch(modalOpenAction({ records, date: number }));
   };
 
   const styles: TStylesDay = {};
@@ -29,6 +32,10 @@ const Day: React.FC<TDayProps> = ({ number, records }) => {
 
   if (contextValue.todayParse === number) {
     styles.backgroundColor = green[200];
+  }
+
+  if (contextValue.todayParse === number && records.length && number !== null) {
+    dispatch(modalOpenAction({ records, date: number }));
   }
 
   return (

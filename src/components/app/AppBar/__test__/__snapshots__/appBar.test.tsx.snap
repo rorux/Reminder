@@ -15,6 +15,7 @@ exports[`AppBar component Should render AppBar component 1`] = `
     <ForwardRef(IconButton)
       aria-label="open drawer"
       color="inherit"
+      data-test="toggle-drawer"
       edge="start"
       onClick={[Function]}
       sx={
@@ -38,6 +39,19 @@ exports[`AppBar component Should render AppBar component 1`] = `
     >
       Редактирование записи
     </ForwardRef(Typography)>
+    <ForwardRef(IconButton)
+      aria-label="logout"
+      data-test="logout"
+      onClick={[Function]}
+    >
+      <Memo(ForwardRef(LogoutIcon))
+        sx={
+          Object {
+            "color": "white",
+          }
+        }
+      />
+    </ForwardRef(IconButton)>
   </ForwardRef(Toolbar)>
 </Styled(ForwardRef(AppBar))>
 `;

@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import firebase from 'firebase';
 import Router from './router/Router';
 import { store } from './store';
-import { deleteRecordWithFirebase } from '@store/records/actions';
 
 const App: React.FC = () => {
   const [authed, setAuthed] = useState<boolean | null>(null);
