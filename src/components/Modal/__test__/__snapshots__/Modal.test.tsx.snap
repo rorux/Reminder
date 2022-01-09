@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BootstrapDialogTitle component Should render BootstrapDialogTitle component 1`] = `
+<ForwardRef(DialogTitle)
+  id="id"
+  sx={
+    Object {
+      "m": 0,
+      "p": 2,
+    }
+  }
+>
+  <ForwardRef(IconButton)
+    aria-label="close"
+    onClick={[MockFunction]}
+    sx={
+      Object {
+        "color": [Function],
+        "position": "absolute",
+        "right": 8,
+        "top": 8,
+      }
+    }
+  >
+    <Memo(ForwardRef(CloseIcon)) />
+  </ForwardRef(IconButton)>
+</ForwardRef(DialogTitle)>
+`;
+
+exports[`Modal component Should render Modal component 1`] = `
+<Styled(ForwardRef(Dialog))
+  aria-labelledby="customized-dialog-title"
+  data-test="dialog"
+  onClose={[Function]}
+  open={false}
+>
+  <BootstrapDialogTitle
+    id="customized-dialog-title"
+    onClose={[Function]}
+  >
+    01.01.1970
+  </BootstrapDialogTitle>
+  <ForwardRef(DialogContent)
+    dividers={true}
+  >
+    <ForwardRef(List)
+      sx={
+        Object {
+          "bgcolor": "background.paper",
+          "maxWidth": 360,
+          "width": "100%",
+        }
+      }
+    >
+      <ForwardRef(ListItem)
+        key="1"
+      >
+        <ForwardRef(ListItemAvatar)>
+          <ForwardRef(Avatar)>
+            <Memo(ForwardRef(WorkIcon)) />
+          </ForwardRef(Avatar)>
+        </ForwardRef(ListItemAvatar)>
+        <ForwardRef(ListItemText)
+          primary="title of monthly remind"
+          secondary="Ежемесячно"
+        />
+      </ForwardRef(ListItem)>
+      <ForwardRef(ListItem)
+        key="2"
+      >
+        <ForwardRef(ListItemAvatar)>
+          <ForwardRef(Avatar)>
+            <Memo(ForwardRef(WorkIcon)) />
+          </ForwardRef(Avatar)>
+        </ForwardRef(ListItemAvatar)>
+        <ForwardRef(ListItemText)
+          primary="title of quarterly remind"
+          secondary="Ежеквартально"
+        />
+      </ForwardRef(ListItem)>
+      <ForwardRef(ListItem)
+        key="3"
+      >
+        <ForwardRef(ListItemAvatar)>
+          <ForwardRef(Avatar)>
+            <Memo(ForwardRef(WorkIcon)) />
+          </ForwardRef(Avatar)>
+        </ForwardRef(ListItemAvatar)>
+        <ForwardRef(ListItemText)
+          primary="title of weekly remind"
+          secondary="Еженедельно"
+        />
+      </ForwardRef(ListItem)>
+    </ForwardRef(List)>
+  </ForwardRef(DialogContent)>
+</Styled(ForwardRef(Dialog))>
+`;

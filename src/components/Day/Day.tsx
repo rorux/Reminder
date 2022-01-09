@@ -7,7 +7,7 @@ import { TDayProps, TStylesDay } from './types';
 import { MyContext } from '@components/containers/Calendar/Calendar';
 import { modalOpenAction } from '@store/app/actions';
 
-const Item = styled(Paper)(({ theme }) => ({
+export const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.caption,
   padding: theme.spacing(1),
   textAlign: 'center',
@@ -39,7 +39,12 @@ const Day: React.FC<TDayProps> = ({ number, records }) => {
   }
 
   return (
-    <Item elevation={0} sx={styles} onClick={records.length ? handleShowRecords : undefined}>
+    <Item
+      data-test="item"
+      elevation={0}
+      sx={styles}
+      onClick={records.length ? handleShowRecords : undefined}
+    >
       {number !== null ? new Date(number).getDate() : ''}
     </Item>
   );

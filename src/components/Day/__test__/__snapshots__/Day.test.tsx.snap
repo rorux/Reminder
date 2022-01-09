@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Day component Should render Day component 1`] = `
+<Styled(ForwardRef(Paper))
+  data-test="item"
+  elevation={0}
+  onClick={[Function]}
+  sx={
+    Object {
+      "backgroundColor": "#e0e0e0",
+      "cursor": "pointer",
+    }
+  }
+>
+  1
+</Styled(ForwardRef(Paper))>
+`;
+
+exports[`Item component Should render Item component 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "insert": [Function],
+      "inserted": Object {
+        "n8odea": true,
+      },
+      "key": "css",
+      "nonce": undefined,
+      "registered": Object {
+        "css-n8odea": "font-family:\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif;font-weight:400;font-size:0.75rem;line-height:1.66;letter-spacing:0.03333em;padding:8px;text-align:center;width:32px;height:32px;",
+      },
+      "sheet": StyleSheet {
+        "_insertTag": [Function],
+        "before": null,
+        "container": undefined,
+        "ctr": 0,
+        "insertionPoint": undefined,
+        "isSpeedy": false,
+        "key": "css",
+        "nonce": undefined,
+        "prepend": undefined,
+        "tags": Array [],
+      },
+    }
+  }
+>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-n8odea{font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:0.75rem;line-height:1.66;letter-spacing:0.03333em;padding:8px;text-align:center;width:32px;height:32px;}",
+      }
+    }
+    data-emotion="css n8odea"
+  />
+  <ForwardRef(Paper)
+    className="css-n8odea"
+  />
+</ContextProvider>
+`;

@@ -43,11 +43,11 @@ const Calendar = () => {
   }, [month]);
 
   const handleBeforeMonth = () => {
-    setMonth((month) => month - 1);
+    setMonth(month - 1);
   };
 
   const handleNextMonth = () => {
-    setMonth((month) => month + 1);
+    setMonth(month + 1);
   };
 
   return (
@@ -74,6 +74,7 @@ const Calendar = () => {
                 </Grid>
                 <Grid item>
                   <IconButton
+                    data-test="button-before"
                     disabled={isBeforeMonthDisabled}
                     aria-label="delete"
                     size="small"
@@ -82,6 +83,7 @@ const Calendar = () => {
                     <NavigateBefore fontSize="inherit" />
                   </IconButton>
                   <IconButton
+                    data-test="button-next"
                     disabled={isNextMonthDisabled}
                     aria-label="delete"
                     size="small"

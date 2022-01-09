@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Week component Should render Week component 1`] = `
+<ForwardRef(Stack)
+  direction="row"
+  sx={
+    Object {
+      "justifyContent": "space-between",
+      "marginBottom": "2px",
+    }
+  }
+>
+  <Day
+    key="b7e92bf0-7165-11ec-a1a3-4d70b950126b"
+    number={null}
+    records={Array []}
+  />
+  <Day
+    key="b7e95300-7165-11ec-a1a3-4d70b950126b"
+    number={null}
+    records={Array []}
+  />
+  <Day
+    key="b7e95301-7165-11ec-a1a3-4d70b950126b"
+    number={1642366800000}
+    records={
+      Array [
+        Object {
+          "days": Array [
+            1642366800000,
+            1644872400000,
+          ],
+          "holidays": "afterHoliday",
+          "id": "1",
+          "monthday": "8",
+          "period": "monthly",
+          "title": "title of monthly remind",
+        },
+      ]
+    }
+  />
+</ForwardRef(Stack)>
+`;

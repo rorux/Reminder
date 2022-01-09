@@ -3,6 +3,11 @@
 exports[`RecordItem component Should render RecordItem component 1`] = `
 <ForwardRef(Accordion)
   expanded={false}
+  sx={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <ForwardRef(AccordionSummary)
     aria-controls="panelidbh-content"

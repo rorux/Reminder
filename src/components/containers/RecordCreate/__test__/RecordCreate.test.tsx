@@ -24,10 +24,6 @@ describe('RecordCreate component', () => {
     useDispatch = jest.spyOn(Redux, 'useDispatch');
     mockDispatch = jest.fn();
     useDispatch.mockReturnValue(mockDispatch);
-    // setState = jest.fn();
-    // useStateSpy = jest.spyOn(React, 'useState');
-    // // @ts-ignore
-    // useStateSpy.mockImplementation((init) => [init, setState]);
     component = shallow(<RecordCreate />);
   });
 

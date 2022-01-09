@@ -1,7 +1,7 @@
 import React from 'react';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Enzyme, { shallow } from 'enzyme';
-import Month from '../Month';
+import Month, { Item } from '../Month';
 import { getCountDaysOnMonth, getTheFirstWeek, getDateParse, getWeek } from '../funcs';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -161,5 +161,30 @@ describe('Testing Functions', () => {
       weekArray: [Date.parse(String(new Date(2022, 0, 31))), null, null, null, null, null, null],
       nextDay: null,
     });
+  });
+});
+
+const recordList = [
+  {
+    id: '1',
+    title: 'title of monthly remind',
+    period: 'monthly',
+    monthday: '8',
+    holidays: 'afterHoliday',
+    days: [1642366800000, 1644872400000],
+  },
+];
+
+describe('Month component', () => {
+  it('Should render Month component', () => {
+    const component = shallow(<Month recordList={recordList} year={2022} month={1} />);
+    expect(component).toMatchSnapshot();
+  });
+});
+
+describe('Item component', () => {
+  it('Should render Item component', () => {
+    const component = shallow(<Item />);
+    expect(component).toMatchSnapshot();
   });
 });

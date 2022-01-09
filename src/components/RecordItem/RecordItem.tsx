@@ -25,6 +25,7 @@ const RecordItem: React.FC<TRecordItemProps> = ({
     <Accordion
       expanded={expanded === `panel${record.id}`}
       onChange={handleChange(`panel${record.id}`)}
+      sx={{ width: '100%' }}
     >
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}

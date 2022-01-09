@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Check Lazy components Calendar 1`] = `
+<Suspense
+  fallback={
+    <div>
+      loading...
+    </div>
+  }
+>
+  <lazy />
+</Suspense>
+`;
+
 exports[`Router Should rendered with authed false 1`] = `
 <Switch>
   <MainRoute

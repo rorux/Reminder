@@ -9,7 +9,7 @@ import { getTheFirstWeek, getWeek } from './funcs';
 import { weekdays } from './constants';
 import Week from '../Week';
 
-const Item = styled(Paper)(({ theme }) => ({
+export const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.caption,
   padding: theme.spacing(1),
   textAlign: 'center',

@@ -32,7 +32,7 @@ export interface DialogTitleProps {
   onClose: () => void;
 }
 
-const BootstrapDialogTitle = (props: DialogTitleProps) => {
+export const BootstrapDialogTitle = (props: DialogTitleProps) => {
   const { children, onClose, ...other } = props;
 
   return (
@@ -72,6 +72,7 @@ export default function CustomizedDialogs() {
 
   return (
     <BootstrapDialog
+      data-test="dialog"
       onClose={handleClose}
       aria-labelledby="customized-dialog-title"
       open={isModalRecordsOpen}

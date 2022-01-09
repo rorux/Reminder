@@ -9,6 +9,7 @@ import {
 import { recordsSelector } from '../selectors';
 import { rootStateForTesting } from '@store/types';
 import { RecordsActionTypes } from '../types';
+import recordsReducer from '../reducer';
 
 const dispatch = jest.fn();
 
@@ -105,6 +106,61 @@ describe('Records selector testing', () => {
       recordList: [],
       loading: false,
       error: null,
+    });
+  });
+});
+
+const initialState = {
+  recordList: [],
+  error: null,
+  loading: false,
+};
+
+const record = {
+  id: '1',
+  title: 'title of monthly remind',
+  period: 'monthly',
+  monthday: '8',
+  holidays: 'afterHoliday',
+  days: [1642366800000, 1644872400000],
+};
+
+describe('Records reducer testing', () => {
+  it('RECORDS_INIT', () => {
+    expect(
+      recordsReducer(initialState, {
+        type: RecordsActionTypes.RECORDS_INIT,
+      })
+    ).toEqual({
+      recordList: [],
+      error: null,
+      loading: true,
+    });
+  });
+
+  it('RECORDS_SUCCESS', () => {
+    expect(
+      recordsReducer(initialState, {
+        type: RecordsActionTypes.RECORDS_SUCCESS,
+        payload: [record],
+      })
+    ).toEqual({
+      recordList: [record],
+      error: null,
+      loading: false,
+    });
+  });
+
+  it('RECORDS_ERROR', () => {
+    expect(
+      recordsReducer(initialState, {
+        type: RecordsActionTypes.RECORDS_ERROR,
+        payload: 'Error',
+      })
+    ).toEqual({
+      recordList: [],
+      error: 'Error',
+      loading: false,
     });
   });
 });

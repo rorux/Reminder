@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item component Should render Item component 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "insert": [Function],
+      "inserted": Object {
+        "n8odea": true,
+      },
+      "key": "css",
+      "nonce": undefined,
+      "registered": Object {
+        "css-n8odea": "font-family:\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif;font-weight:400;font-size:0.75rem;line-height:1.66;letter-spacing:0.03333em;padding:8px;text-align:center;width:32px;height:32px;",
+      },
+      "sheet": StyleSheet {
+        "_insertTag": [Function],
+        "before": null,
+        "container": undefined,
+        "ctr": 0,
+        "insertionPoint": undefined,
+        "isSpeedy": false,
+        "key": "css",
+        "nonce": undefined,
+        "prepend": undefined,
+        "tags": Array [],
+      },
+    }
+  }
+>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-n8odea{font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:0.75rem;line-height:1.66;letter-spacing:0.03333em;padding:8px;text-align:center;width:32px;height:32px;}",
+      }
+    }
+    data-emotion="css n8odea"
+  />
+  <ForwardRef(Paper)
+    className="css-n8odea"
+  />
+</ContextProvider>
+`;
+
+exports[`Month component Should render Month component 1`] = `
+<div
+  data-test="month"
+>
+  <ForwardRef(Stack)
+    direction="row"
+    sx={
+      Object {
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Styled(ForwardRef(Paper))
+      elevation={0}
+      key="b81ac340-7165-11ec-9a3d-9589ff4d878b"
+      sx={
+        Object {
+          "color": "#bdbdbd",
+        }
+      }
+    >
+      Пн
+    </Styled(ForwardRef(Paper))>
+    <Styled(ForwardRef(Paper))
+      elevation={0}
+      key="b81aea50-7165-11ec-9a3d-9589ff4d878b"
+      sx={
+        Object {
+          "color": "#bdbdbd",
+        }
+      }
+    >
+      Вт
+    </Styled(ForwardRef(Paper))>
+    <Styled(ForwardRef(Paper))
+      elevation={0}
+      key="b81b1160-7165-11ec-9a3d-9589ff4d878b"
+      sx={
+        Object {
+          "color": "#bdbdbd",
+        }
+      }
+    >
+      Ср
+    </Styled(ForwardRef(Paper))>
+    <Styled(ForwardRef(Paper))
+      elevation={0}
+      key="b81b1161-7165-11ec-9a3d-9589ff4d878b"
+      sx={
+        Object {
+          "color": "#bdbdbd",
+        }
+      }
+    >
+      Чт
+    </Styled(ForwardRef(Paper))>
+    <Styled(ForwardRef(Paper))
+      elevation={0}
+      key="b81b1162-7165-11ec-9a3d-9589ff4d878b"
+      sx={
+        Object {
+          "color": "#bdbdbd",
+        }
+      }
+    >
+      Пт
+    </Styled(ForwardRef(Paper))>
+    <Styled(ForwardRef(Paper))
+      elevation={0}
+      key="b81b1163-7165-11ec-9a3d-9589ff4d878b"
+      sx={
+        Object {
+          "color": "#bdbdbd",
+        }
+      }
+    >
+      Сб
+    </Styled(ForwardRef(Paper))>
+    <Styled(ForwardRef(Paper))
+      elevation={0}
+      key="b81b1164-7165-11ec-9a3d-9589ff4d878b"
+      sx={
+        Object {
+          "color": "#bdbdbd",
+        }
+      }
+    >
+      Вс
+    </Styled(ForwardRef(Paper))>
+  </ForwardRef(Stack)>
+  <Week
+    recordList={
+      Array [
+        Object {
+          "days": Array [
+            1642366800000,
+            1644872400000,
+          ],
+          "holidays": "afterHoliday",
+          "id": "1",
+          "monthday": "8",
+          "period": "monthly",
+          "title": "title of monthly remind",
+        },
+      ]
+    }
+    weekArray={
+      Array [
+        null,
+        1643662800000,
+        1643749200000,
+        1643835600000,
+        1643922000000,
+        1644008400000,
+        1644094800000,
+      ]
+    }
+  />
+  <Week
+    recordList={
+      Array [
+        Object {
+          "days": Array [
+            1642366800000,
+            1644872400000,
+          ],
+          "holidays": "afterHoliday",
+          "id": "1",
+          "monthday": "8",
+          "period": "monthly",
+          "title": "title of monthly remind",
+        },
+      ]
+    }
+    weekArray={
+      Array [
+        1644181200000,
+        1644267600000,
+        1644354000000,
+        1644440400000,
+        1644526800000,
+        1644613200000,
+        1644699600000,
+      ]
+    }
+  />
+  <Week
+    recordList={
+      Array [
+        Object {
+          "days": Array [
+            1642366800000,
+            1644872400000,
+          ],
+          "holidays": "afterHoliday",
+          "id": "1",
+          "monthday": "8",
+          "period": "monthly",
+          "title": "title of monthly remind",
+        },
+      ]
+    }
+    weekArray={
+      Array [
+        1644786000000,
+        1644872400000,
+        1644958800000,
+        1645045200000,
+        1645131600000,
+        1645218000000,
+        1645304400000,
+      ]
+    }
+  />
+  <Week
+    recordList={
+      Array [
+        Object {
+          "days": Array [
+            1642366800000,
+            1644872400000,
+          ],
+          "holidays": "afterHoliday",
+          "id": "1",
+          "monthday": "8",
+          "period": "monthly",
+          "title": "title of monthly remind",
+        },
+      ]
+    }
+    weekArray={
+      Array [
+        1645390800000,
+        1645477200000,
+        1645563600000,
+        1645650000000,
+        1645736400000,
+        1645822800000,
+        1645909200000,
+      ]
+    }
+  />
+  <Week
+    recordList={
+      Array [
+        Object {
+          "days": Array [
+            1642366800000,
+            1644872400000,
+          ],
+          "holidays": "afterHoliday",
+          "id": "1",
+          "monthday": "8",
+          "period": "monthly",
+          "title": "title of monthly remind",
+        },
+      ]
+    }
+    weekArray={
+      Array [
+        1645995600000,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  />
+  <Week
+    recordList={
+      Array [
+        Object {
+          "days": Array [
+            1642366800000,
+            1644872400000,
+          ],
+          "holidays": "afterHoliday",
+          "id": "1",
+          "monthday": "8",
+          "period": "monthly",
+          "title": "title of monthly remind",
+        },
+      ]
+    }
+    weekArray={
+      Array [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+      ]
+    }
+  />
+</div>
+`;

@@ -10,7 +10,7 @@
     "lint": "eslint --ext .ts,.tsx src --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "test:coverage": "jest --coverage -u",
     "create-component": "node utils/componentCreator --name"
   },
   "repository": {

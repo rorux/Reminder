@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard component Snapshot of Dashboard component 1`] = `
+<Fragment>
+  <div
+    className="months-wrap"
+    data-test="calendar"
+  >
+    <ForwardRef(Box)
+      p={1}
+      sx={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderRadius": 1,
+          "boxSizing": "border-box",
+          "minWidth": 260,
+        }
+      }
+    >
+      <ForwardRef(Paper)
+        elevation={0}
+        sx={
+          Object {
+            "padding": "5px",
+            "paddingTop": "2px",
+          }
+        }
+      >
+        <ForwardRef(Grid)
+          container={true}
+          p={1}
+          sx={
+            Object {
+              "height": 40,
+            }
+          }
+        >
+          <ForwardRef(Grid)
+            flexGrow={1}
+            item={true}
+            sm={true}
+          >
+            <ForwardRef(Typography)
+              gutterBottom={true}
+              variant="overline"
+            >
+              Январь
+               
+              2022
+            </ForwardRef(Typography)>
+          </ForwardRef(Grid)>
+          <ForwardRef(Grid)
+            item={true}
+          >
+            <ForwardRef(IconButton)
+              aria-label="delete"
+              data-test="button-before"
+              disabled={false}
+              onClick={[Function]}
+              size="small"
+            >
+              <Memo(ForwardRef(NavigateBeforeIcon))
+                fontSize="inherit"
+              />
+            </ForwardRef(IconButton)>
+            <ForwardRef(IconButton)
+              aria-label="delete"
+              data-test="button-next"
+              disabled={false}
+              onClick={[Function]}
+              size="small"
+            >
+              <Memo(ForwardRef(NavigateNextIcon))
+                fontSize="inherit"
+              />
+            </ForwardRef(IconButton)>
+          </ForwardRef(Grid)>
+        </ForwardRef(Grid)>
+        <ContextProvider
+          value={
+            Object {
+              "todayParse": 1641675600000,
+            }
+          }
+        >
+          <Month
+            month={0}
+            recordList={
+              Array [
+                Object {
+                  "days": Array [
+                    1642366800000,
+                    1644872400000,
+                  ],
+                  "holidays": "afterHoliday",
+                  "id": "1",
+                  "monthday": "8",
+                  "period": "monthly",
+                  "title": "title of monthly remind",
+                },
+                Object {
+                  "days": Array [
+                    1642366800000,
+                    1644872400000,
+                  ],
+                  "holidays": "beforeHoliday",
+                  "id": "2",
+                  "monthday": "8",
+                  "period": "quarterly",
+                  "quarter": "Янв, Апр, Июл, Окт",
+                  "title": "title of quarterly remind",
+                },
+              ]
+            }
+            year={2022}
+          />
+        </ContextProvider>
+      </ForwardRef(Paper)>
+    </ForwardRef(Box)>
+    <CustomizedDialogs />
+  </div>
+</Fragment>
+`;
