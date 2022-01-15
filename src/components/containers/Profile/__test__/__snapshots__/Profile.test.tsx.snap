@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component Snapshot of Dashboard component 1`] = `
+<Fragment>
+  <div
+    data-test="profile"
+  >
+    <ForwardRef(Typography)
+      variant="body1"
+    >
+      Ваше имя: 
+      <strong />
+    </ForwardRef(Typography)>
+    <ForwardRef(TextField)
+      id="standard-basic"
+      label="Введите другое имя.."
+      onChange={[Function]}
+      sx={
+        Object {
+          "marginRight": 2,
+          "marginTop": 2,
+        }
+      }
+      value=""
+      variant="standard"
+    />
+    <ForwardRef(Button)
+      color="success"
+      disabled={true}
+      onClick={[Function]}
+      sx={
+        Object {
+          "marginTop": 3,
+        }
+      }
+      variant="contained"
+    >
+      Изменить имя
+    </ForwardRef(Button)>
+  </div>
+</Fragment>
+`;

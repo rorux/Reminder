@@ -79,7 +79,7 @@ exports[`Dashboard component Snapshot of Dashboard component 1`] = `
         <ContextProvider
           value={
             Object {
-              "todayParse": 1641675600000,
+              "todayParse": 1642194000000,
             }
           }
         >

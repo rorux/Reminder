@@ -6,6 +6,7 @@ import { grey, green } from '@mui/material/colors';
 import { TDayProps, TStylesDay } from './types';
 import { MyContext } from '@components/containers/Calendar/Calendar';
 import { modalOpenAction } from '@store/app/actions';
+import { HOLIDAYS_2022 } from '@utils/records/constants';
 
 export const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.caption,
@@ -32,6 +33,10 @@ const Day: React.FC<TDayProps> = ({ number, records }) => {
 
   if (contextValue.todayParse === number) {
     styles.backgroundColor = green[200];
+  }
+
+  if (number !== null && HOLIDAYS_2022.includes(number)) {
+    styles.color = 'red';
   }
 
   if (contextValue.todayParse === number && records.length && number !== null) {

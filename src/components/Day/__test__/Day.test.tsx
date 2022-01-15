@@ -61,6 +61,17 @@ describe('Day component', () => {
     expect(item.props().sx.cursor).toBe('pointer');
   });
 
+  it('Item changes color when holiday', () => {
+    mockUseContext();
+    const component = shallow(
+      <Day records={[record]} number={Date.parse(String(new Date(2022, 0, 1)))} />
+    );
+    const item = component.find(`[data-test='item']`);
+
+    // @ts-ignore
+    expect(item.props().sx.color).toBe('red');
+  });
+
   it('useDispatch have not be called when records empty', () => {
     component = shallow(<Day records={[]} number={123} />);
     const item = component.find(`[data-test='item']`);

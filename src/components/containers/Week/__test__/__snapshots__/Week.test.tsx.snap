@@ -11,17 +11,17 @@ exports[`Week component Should render Week component 1`] = `
   }
 >
   <Day
-    key="b7e92bf0-7165-11ec-a1a3-4d70b950126b"
+    key="88cedec0-75d7-11ec-b3d8-1bd9c38f91a3"
     number={null}
     records={Array []}
   />
   <Day
-    key="b7e95300-7165-11ec-a1a3-4d70b950126b"
+    key="88cf05d0-75d7-11ec-b3d8-1bd9c38f91a3"
     number={null}
     records={Array []}
   />
   <Day
-    key="b7e95301-7165-11ec-a1a3-4d70b950126b"
+    key="88cf05d1-75d7-11ec-b3d8-1bd9c38f91a3"
     number={1642366800000}
     records={
       Array [

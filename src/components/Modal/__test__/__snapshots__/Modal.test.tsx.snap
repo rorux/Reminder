@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BootstrapDialogTitle component Should render BootstrapDialogTitle component 1`] = `
+exports[`BootstrapDialogTitle component Should render BootstrapDialogTitle component with "onClose" 1`] = `
 <ForwardRef(DialogTitle)
   id="id"
   sx={

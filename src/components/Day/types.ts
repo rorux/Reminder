@@ -8,4 +8,5 @@ export type TDayProps = {
 export type TStylesDay = {
   backgroundColor?: string;
   cursor?: 'pointer';
+  color?: string;
 };
