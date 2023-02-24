@@ -1,18 +1,18 @@
 import { TWeekDay, THolidays, TMonthDays, TQuarter } from './types';
-import { HOLIDAYS_2022 } from './constants';
+import { HOLIDAYS_2023 } from './constants';
 
 export const DAY_MS = 60 * 60 * 24 * 1000;
 
 export const getDaysBeforeHolidays = (array: Array<number>): Array<number> => {
   const dates: Array<number> = [];
   array.forEach((day) => {
-    if (HOLIDAYS_2022.includes(day)) {
+    if (HOLIDAYS_2023.includes(day)) {
       if (day > 1641675600000) {
         let checkDay = day;
         let isHoliday = true;
         while (isHoliday) {
           checkDay -= DAY_MS;
-          if (!HOLIDAYS_2022.includes(checkDay)) isHoliday = false;
+          if (!HOLIDAYS_2023.includes(checkDay)) isHoliday = false;
         }
         dates.push(checkDay);
       }
@@ -24,12 +24,12 @@ export const getDaysBeforeHolidays = (array: Array<number>): Array<number> => {
 export const getDaysAfterHolidays = (array: Array<number>): Array<number> => {
   const dates: Array<number> = [];
   array.forEach((day) => {
-    if (HOLIDAYS_2022.includes(day)) {
+    if (HOLIDAYS_2023.includes(day)) {
       let checkDay = day;
       let isHoliday = true;
       while (isHoliday) {
         checkDay += DAY_MS;
-        if (!HOLIDAYS_2022.includes(checkDay)) isHoliday = false;
+        if (!HOLIDAYS_2023.includes(checkDay)) isHoliday = false;
       }
       dates.push(checkDay);
     } else dates.push(day);
@@ -40,8 +40,8 @@ export const getDaysAfterHolidays = (array: Array<number>): Array<number> => {
 export const weeklyComputedDays = (
   weeklyWeekDay: TWeekDay,
   weeklyHolidays: THolidays,
-  dateStart = Date.parse(String(new Date(2022, 0, 1))),
-  dateEnd = Date.parse(String(new Date(2023, 0, 1)))
+  dateStart = Date.parse(String(new Date(2023, 0, 1))),
+  dateEnd = Date.parse(String(new Date(2024, 0, 1)))
 ): Array<number> => {
   const dates = [];
   for (let day = dateStart; day < dateEnd; day += DAY_MS) {
